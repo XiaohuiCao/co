@@ -1,10 +1,5 @@
 package com.ch.co.ipc.messenger;
 
-import com.ch.co.R;
-import com.ch.co.R.layout;
-import com.ch.co.ipc.model.User;
-import com.ch.co.ipc.utils.MyConstants;
-
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -17,6 +12,9 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
+
+import com.ch.co.R;
+import com.ch.co.ipc.utils.MyConstants;
 
 public class MessengerActivity extends Activity {
 
@@ -61,7 +59,7 @@ public class MessengerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messenger);
+        setContentView(R.layout.ipc_activity_messenger);
         Intent intent = new Intent(this, MessengerService.class);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }

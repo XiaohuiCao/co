@@ -16,15 +16,20 @@ public class BinderPoolActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_binder_pool);
+        setContentView(R.layout.ipc_activity_binder_pool);
         new Thread(() -> doWork()).start();
     }
 
     private void doWork() {
         BinderPool binderPool = BinderPool.getInstance(BinderPoolActivity.this);
+        doSecurityCenter(binderPool);
+        doCompute(binderPool);
+    }
+
+    private void doSecurityCenter(BinderPool binderPool) {
+        Log.d(TAG, "visit ISecurityCenter");
         IBinder securityBinder = binderPool.queryBinder(BinderPool.BINDER_SECURITY_CENTER);
         mSecurityCenter = (ISecurityCenter) SecurityCenterImpl.asInterface(securityBinder);
-        Log.d(TAG, "visit ISecurityCenter");
         String msg = "binder pool activity hello world-安卓";
         System.out.println("content:" + msg);
         try {
@@ -34,7 +39,9 @@ public class BinderPoolActivity extends Activity {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
 
+    private void doCompute(BinderPool binderPool) {
         Log.d(TAG, "visit ICompute");
         IBinder computeBinder = binderPool.queryBinder(BinderPool.BINDER_COMPUTE);
         mCompute = ComputeImpl.asInterface(computeBinder);

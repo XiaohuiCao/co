@@ -9,5 +9,6 @@
     <string name="title_activity_tcpserver">TCPServerActivity</string>
     <string name="title_activity_tcpclient">TCPClientActivity</string>
     <string name="title_activity_binder_pool">BinderPoolActivity</string>
+    <string name="title_scene_1">demo</string>
 
 </resources>

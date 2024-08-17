@@ -21,16 +21,16 @@ public class BookManagerService extends Service {
 
     private AtomicBoolean mIsServiceDestoryed = new AtomicBoolean(false);
 
-    private CopyOnWriteArrayList<Book> mBookList = new CopyOnWriteArrayList<Book>();
+    private CopyOnWriteArrayList<Book> mBookList = new CopyOnWriteArrayList<>();
 //     private CopyOnWriteArrayList<IOnNewBookArrivedListener> mListenerList =
 //     new CopyOnWriteArrayList<IOnNewBookArrivedListener>();
 
-    private RemoteCallbackList<IOnNewBookArrivedListener> mListenerList = new RemoteCallbackList<IOnNewBookArrivedListener>();
+    private RemoteCallbackList<IOnNewBookArrivedListener> mListenerList = new RemoteCallbackList<>();
 
     private Binder mBinder = new IBookManager.Stub() {
 
         @Override
-        public List<Book> getBookList() throws RemoteException {
+        public List<Book> getBookList() {
             SystemClock.sleep(5000);
             return mBookList;
         }
@@ -61,10 +61,8 @@ public class BookManagerService extends Service {
         }
 
         @Override
-        public void registerListener(IOnNewBookArrivedListener listener)
-                throws RemoteException {
+        public void registerListener(IOnNewBookArrivedListener listener) {
             mListenerList.register(listener);
-
             final int N = mListenerList.beginBroadcast();
             mListenerList.finishBroadcast();
             Log.d(TAG, "registerListener, current size:" + N);

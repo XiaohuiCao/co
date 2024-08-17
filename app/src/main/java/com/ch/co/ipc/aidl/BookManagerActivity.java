@@ -89,7 +89,7 @@ public class BookManagerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_manager);
+        setContentView(R.layout.ipc_activity_book_manager);
         Intent intent = new Intent(this, BookManagerService.class);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }

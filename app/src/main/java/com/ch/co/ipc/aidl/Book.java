@@ -3,6 +3,9 @@ package com.ch.co.ipc.aidl;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * 图书信息类，实现了Parcelable接口
+ */
 public class Book implements Parcelable {
 
     public int bookId;

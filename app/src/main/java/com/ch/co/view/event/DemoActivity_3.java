@@ -1,4 +1,6 @@
-package com.ch.co.ipc;
+package com.ch.co.view.event;
+
+import com.ch.co.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,10 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.ch.co.R;
-
-public class ThirdActivity extends Activity {
-    private static final String TAG = "ThirdActivity";
+public class DemoActivity_3 extends Activity {
+    private static final String TAG = "view event DemoActivity_3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class ThirdActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ThirdActivity.this, MainActivity.class);
+                intent.setClass(DemoActivity_3.this, CommonActivity.class);
                 intent.putExtra("time", System.currentTimeMillis());
                 startActivity(intent);
             }

@@ -56,7 +56,7 @@ public class TCPClientActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tcpclient);
+        setContentView(R.layout.ipc_activity_tcpclient);
         mMessageTextView = (TextView) findViewById(R.id.msg_container);
         mSendButton = (Button) findViewById(R.id.send);
         mSendButton.setOnClickListener(this);

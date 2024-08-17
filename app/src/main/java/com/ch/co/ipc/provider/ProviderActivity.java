@@ -17,7 +17,7 @@ public class ProviderActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_provider);
+        setContentView(R.layout.ipc_activity_provider);
 //         Uri uri = Uri.parse("content://com.ch.co.book.provider");
 //         getContentResolver().query(uri, null, null, null, null);
 //         getContentResolver().query(uri, null, null, null, null);

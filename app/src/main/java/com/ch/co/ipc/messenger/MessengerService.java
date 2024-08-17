@@ -1,8 +1,5 @@
 package com.ch.co.ipc.messenger;
 
-import com.ch.co.ipc.model.User;
-import com.ch.co.ipc.utils.MyConstants;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +9,8 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
+
+import com.ch.co.ipc.utils.MyConstants;
 
 public class MessengerService extends Service {
 

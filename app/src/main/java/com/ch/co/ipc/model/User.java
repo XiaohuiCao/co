@@ -7,6 +7,9 @@ import com.ch.co.ipc.aidl.Book;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * 2.3.2 Parcelable接口典型用法
+ */
 public class User implements Parcelable, Serializable {
     private static final long serialVersionUID = 519067123721295773L;
 
@@ -50,8 +53,7 @@ public class User implements Parcelable, Serializable {
         userId = in.readInt();
         userName = in.readString();
         isMale = in.readInt() == 1;
-        book = in
-                .readParcelable(Thread.currentThread().getContextClassLoader());
+        book = in.readParcelable(Thread.currentThread().getContextClassLoader());
     }
 
     @Override

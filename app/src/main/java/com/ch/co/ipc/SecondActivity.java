@@ -23,7 +23,7 @@ public class SecondActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.ipc_activity_second);
         findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 
             @Override

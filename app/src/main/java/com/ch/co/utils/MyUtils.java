@@ -1,4 +1,4 @@
-package com.ch.co.view.event.utils;
+package com.ch.co.utils;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -13,8 +13,7 @@ import android.view.WindowManager;
 public class MyUtils {
 
     public static String getProcessName(Context cxt, int pid) {
-        ActivityManager am = (ActivityManager) cxt
-                .getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager am = (ActivityManager) cxt.getSystemService(Context.ACTIVITY_SERVICE);
         List<RunningAppProcessInfo> runningApps = am.getRunningAppProcesses();
         if (runningApps == null) {
             return null;

@@ -10,8 +10,8 @@ import com.ch.co.R;
 import com.ch.co.ipc.aidl.Book;
 import com.ch.co.ipc.manager.UserManager;
 import com.ch.co.ipc.model.User;
-import com.ch.co.ipc.utils.MyConstants;
-import com.ch.co.ipc.utils.MyUtils;
+import com.ch.co.utils.MyConstants;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,9 +27,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ipc_activity_main);
         UserManager.sUserId = 2;
-        findViewById(R.id.button1).setOnClickListener(v -> {
+        findViewById(R.id.to_act_b).setOnClickListener(v -> {
             Intent intent = new Intent();
-            intent.setClass(MainActivity.this, SecondActivity.class);
+            intent.setClass(MainActivity.this, BActivity.class);
             User user = new User(0, "jake", true);
             user.book = new Book();
             intent.putExtra("extra_user", (Serializable) user);

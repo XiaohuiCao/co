@@ -1,7 +1,7 @@
 package com.ch.co.ipc;
 
 import com.ch.co.ipc.binderpool.BinderPool;
-import com.ch.co.ipc.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Application;
 import android.os.Process;

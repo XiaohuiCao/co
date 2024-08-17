@@ -10,7 +10,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.ch.co.ipc.utils.MyConstants;
+import com.ch.co.utils.MyConstants;
 
 public class MessengerService extends Service {
 

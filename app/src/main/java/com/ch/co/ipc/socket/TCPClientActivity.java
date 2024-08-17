@@ -6,7 +6,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import com.ch.co.R;
-import com.ch.co.ipc.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

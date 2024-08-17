@@ -1,4 +1,4 @@
-package com.ch.co.view.event.utils;
+package com.ch.co.utils;
 
 import android.os.Environment;
 

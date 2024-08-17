@@ -7,8 +7,8 @@ import java.io.ObjectInputStream;
 
 import com.ch.co.R;
 import com.ch.co.ipc.model.User;
-import com.ch.co.ipc.utils.MyConstants;
-import com.ch.co.ipc.utils.MyUtils;
+import com.ch.co.utils.MyConstants;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,19 +17,19 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class SecondActivity extends Activity {
+public class BActivity extends Activity {
     private static final String TAG = "SecondActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ipc_activity_second);
-        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
+        setContentView(R.layout.ipc_activity_b);
+        findViewById(R.id.to_act_c).setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(SecondActivity.this, ThirdActivity.class);
+                intent.setClass(BActivity.this, CActivity.class);
                 intent.putExtra("time", System.currentTimeMillis());
                 startActivity(intent);
             }

@@ -10,5 +10,6 @@
     <string name="title_activity_tcpclient">TCPClientActivity</string>
     <string name="title_activity_binder_pool">BinderPoolActivity</string>
     <string name="title_scene_1">demo</string>
+    <string name="to_view_event_main">跳转至view事件页面</string>
 
 </resources>

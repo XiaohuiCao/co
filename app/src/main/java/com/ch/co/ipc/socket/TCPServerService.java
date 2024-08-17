@@ -10,7 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Random;
 
-import com.ch.co.ipc.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Service;
 import android.content.Intent;

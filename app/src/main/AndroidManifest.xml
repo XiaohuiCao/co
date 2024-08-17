@@ -47,14 +47,15 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ipc.SecondActivity"
+            android:name=".ipc.BActivity"
             android:configChanges="screenLayout"
             android:process=":remote" />
         <activity
-            android:name=".ipc.ThirdActivity"
+            android:name=".ipc.CActivity"
             android:configChanges="screenLayout"
             android:process="com.ch.co.ipc.remote"
             android:exported="true">
@@ -158,16 +159,12 @@
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view.event.DemoActivity_3"
-            android:configChanges="screenLayout"
-            android:label="@string/app_name" />
-        <activity
-            android:name=".view.event.EventMainActivity"
+            android:name=".view.event.ViewEventMainActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

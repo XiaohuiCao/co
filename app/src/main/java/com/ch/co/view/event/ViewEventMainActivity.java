@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.ch.co.R;
 
-public class EventMainActivity extends Activity {
+public class ViewEventMainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

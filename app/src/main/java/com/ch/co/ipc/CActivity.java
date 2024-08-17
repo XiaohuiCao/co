@@ -4,28 +4,29 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.ch.co.R;
+import com.ch.co.view.event.ViewEventMainActivity;
 
-public class ThirdActivity extends Activity {
+public class CActivity extends Activity {
     private static final String TAG = "ThirdActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_event_demo_activity_3);
-        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
+        setContentView(R.layout.ipc_activity_c);
+        findViewById(R.id.to_act_main).setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(CActivity.this, MainActivity.class);
+            intent.putExtra("time", System.currentTimeMillis());
+            startActivity(intent);
+        });
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(ThirdActivity.this, MainActivity.class);
-                intent.putExtra("time", System.currentTimeMillis());
-                startActivity(intent);
-            }
+        findViewById(R.id.to_view_event_main).setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(this, ViewEventMainActivity.class);
+            startActivity(intent);
         });
         Log.d(TAG, "onCreate");
     }

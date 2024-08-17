@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.ch.co.R;
 import com.ch.co.view.event.ui.HorizontalScrollViewEx2;
 import com.ch.co.view.event.ui.ListViewEx;
-import com.ch.co.view.event.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;
 import android.graphics.Color;

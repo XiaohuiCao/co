@@ -179,8 +179,15 @@ public class HorizontalScrollViewEx extends ViewGroup {
         }
     }
 
-    private void smoothScrollBy(int dx, int dy) {
-        mScroller.startScroll(getScrollX(), 0, dx, 0, 500);
+    /**
+     * 缓慢滚动到指定位置
+     * @param destX
+     * @param destY
+     */
+    private void smoothScrollBy(int destX, int destY) {
+        int startX = getScrollX();
+        int duration = 500;     // 移动时间，即500ms内滑向destx，效果就是慢慢滑动
+        mScroller.startScroll(startX, 0, destX - startX, 0, duration);
         invalidate();
     }
 

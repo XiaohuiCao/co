@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.ch.co.R;
 import com.ch.co.view.event.ui.HorizontalScrollViewEx;
-import com.ch.co.view.event.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import java.util.ArrayList;
 

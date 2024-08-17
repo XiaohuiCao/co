@@ -10,30 +10,29 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
-public class TestButton extends TextView {
+public class CustomButton extends TextView {
     private static final String TAG = "TestButton";
     private int mScaledTouchSlop;
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
     private int mLastY = 0;
 
-    public TestButton(Context context) {
+    public CustomButton(Context context) {
         this(context, null);
     }
 
-    public TestButton(Context context, AttributeSet attrs) {
+    public CustomButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public TestButton(Context context, AttributeSet attrs, int defStyle) {
+    public CustomButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
     private void init() {
-        mScaledTouchSlop = ViewConfiguration.get(getContext())
-                .getScaledTouchSlop();
+        mScaledTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
         Log.d(TAG, "sts:" + mScaledTouchSlop);
     }
 
@@ -67,5 +66,4 @@ public class TestButton extends TextView {
         mLastY = y;
         return true;
     }
-
 }

@@ -184,7 +184,7 @@
             android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
-            android:name=".view.principle.ViewPrincipleActivity"
+            android:name=".view.principle.ViewPrincipleMainActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
@@ -192,6 +192,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".view.remote.ViewRemoteTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="standard" />
+        <activity
+            android:name=".view.remote.ViewRemoteDemoActivity_2"
+            android:configChanges="screenLayout"
+            android:exported="true"
+            android:label="@string/title_scene_1"
+            android:launchMode="standard" />
+        <activity
+            android:name=".view.remote.ViewRemoteDemoActivity_1"
+            android:configChanges="screenLayout"
+            android:exported="true"
+            android:label="@string/title_scene_2"
+            android:launchMode="standard" />
+        <activity
+            android:name=".view.remote.ViewRemoteMainActivity"
+            android:label="@string/app_name"
+            android:process=":remote"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category._LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".view.remote.ViewRemoteAppWidgetProvider"
+            android:exported="true">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info" >
+            </meta-data>
+
+            <intent-filter>
+                <action android:name="com.ch.co.view.remote.action.CLICK" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+
+
+
+
+
+
     </application>
 
 </manifest>

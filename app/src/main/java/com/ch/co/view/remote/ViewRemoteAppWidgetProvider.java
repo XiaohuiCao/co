@@ -16,11 +16,11 @@ import android.widget.Toast;
 
 import com.ch.co.R;
 
-public class MyAppWidgetProvider extends AppWidgetProvider {
+public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
     public static final String TAG = "MyAppWidgetProvider";
     public static final String CLICK_ACTION = "com.ch.co.view.remote.ui.action.CLICK";
 
-    public MyAppWidgetProvider() {
+    public ViewRemoteAppWidgetProvider() {
         super();
     }
 
@@ -51,7 +51,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider {
                                 .getBroadcast(context, 0, intentClick, 0);
                         remoteViews.setOnClickPendingIntent(R.id.imageView1, pendingIntent);
                         appWidgetManager.updateAppWidget(new ComponentName(
-                                context, MyAppWidgetProvider.class),remoteViews);
+                                context, ViewRemoteAppWidgetProvider.class),remoteViews);
                         SystemClock.sleep(30);
                     }
 

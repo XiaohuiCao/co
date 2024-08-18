@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.ch.co.R;
-import com.ch.co.view.event.ViewEventMainActivity;
+import com.ch.co.view345.event.ViewEventMainActivity;
 
 public class CActivity extends Activity {
     private static final String TAG = "ThirdActivity";

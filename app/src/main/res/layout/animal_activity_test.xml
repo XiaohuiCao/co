@@ -12,15 +12,6 @@
         android:background="#ff0000"
         android:text="MovingButton" />
 
-    <com.ch.co.view345.principle.ui.TestButton
-        android:id="@+id/button2"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:background="#000000"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:text="我可以滑动" />
-
     <EditText
         android:id="@+id/editText1"
         android:layout_width="150dp"

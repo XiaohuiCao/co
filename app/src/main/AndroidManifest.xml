@@ -145,22 +145,22 @@
         </activity>
 
         <activity
-            android:name=".view.event.CommonActivity"
+            android:name=".view345.event.CommonActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
-            android:name=".view.event.ViewExternInterceptAct"
+            android:name=".view345.event.ViewExternInterceptAct"
             android:configChanges="screenLayout"
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view.event.ViewInterInterceptAct"
+            android:name=".view345.event.ViewInterInterceptAct"
             android:configChanges="screenLayout"
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view.event.ViewEventMainActivity"
+            android:name=".view345.event.ViewEventMainActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
@@ -169,22 +169,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.principle.ViewprincipleTestActivity"
+            android:name=".view345.principle.ViewprincipleTestActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
-            android:name=".view.principle.ViewPrincipleActivity_1"
+            android:name=".view345.principle.ViewPrincipleActivity_1"
             android:configChanges="screenLayout"
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view.principle.ViewPrincipleActivity_2"
+            android:name=".view345.principle.ViewPrincipleActivity_2"
             android:configChanges="screenLayout"
             android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
-            android:name=".view.principle.ViewPrincipleMainActivity"
+            android:name=".view345.principle.ViewPrincipleMainActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
@@ -194,24 +194,24 @@
         </activity>
 
         <activity
-            android:name=".view.remote.ViewRemoteTestActivity"
+            android:name=".view345.remote.ViewRemoteTestActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
-            android:name=".view.remote.ViewRemoteDemoActivity_2"
+            android:name=".view345.remote.ViewRemoteDemoActivity_2"
             android:configChanges="screenLayout"
             android:exported="true"
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view.remote.ViewRemoteDemoActivity_1"
+            android:name=".view345.remote.ViewRemoteDemoActivity_1"
             android:configChanges="screenLayout"
             android:exported="true"
             android:label="@string/title_scene_2"
             android:launchMode="standard" />
         <activity
-            android:name=".view.remote.ViewRemoteMainActivity"
+            android:name=".view345.remote.ViewRemoteMainActivity"
             android:label="@string/app_name"
             android:process=":remote"
             android:exported="true">
@@ -220,7 +220,7 @@
                 <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".view.remote.ViewRemoteAppWidgetProvider"
+        <receiver android:name=".view345.remote.ViewRemoteAppWidgetProvider"
             android:exported="true">
             <meta-data
                 android:name="android.appwidget.provider"
@@ -233,7 +233,30 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".drawable6.DrawableMainActivity"
+            android:label="@string/app_name" >
+        </activity>
 
+        <activity
+            android:name=".animal7.AnimalTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="standard" />
+        <activity
+            android:name=".animal7.AnimalDemoActivity_1"
+            android:configChanges="screenLayout"
+            android:label="@string/title_scene_1"
+            android:launchMode="standard" />
+        <activity
+            android:name=".animal7.AnimalDemoActivity_2"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name"
+            android:launchMode="standard" />
+        <activity
+            android:name=".animal7.AnimalMainActivity"
+            android:label="@string/app_name" >
+        </activity>
 
 
 

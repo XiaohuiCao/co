@@ -7,6 +7,7 @@ import java.util.List;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
@@ -41,6 +42,10 @@ public class MyUtils {
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
         return dm;
+    }
+
+    public static int setColor(int i) {
+        return Color.rgb(255 / (i + 1), 255 / (i + 1), 0);
     }
 
     public static void executeInThread(Runnable runnable) {

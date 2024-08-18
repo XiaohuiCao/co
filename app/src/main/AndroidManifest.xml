@@ -11,6 +11,7 @@
         android:name="com.ch.co.ipc.PROVIDER"
         android:protectionLevel="normal" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.ch.co.ipc.PROVIDER" />
     <uses-permission android:name="com.ch.co.ipc.permission.ACCESS_BOOK_SERVICE" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
@@ -47,7 +48,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -165,6 +166,30 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category._LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.principle.ViewprincipleTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="standard" />
+        <activity
+            android:name=".view.principle.ViewPrincipleActivity_1"
+            android:configChanges="screenLayout"
+            android:label="@string/title_scene_1"
+            android:launchMode="standard" />
+        <activity
+            android:name=".view.principle.ViewPrincipleActivity_2"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name"
+            android:launchMode="standard" />
+        <activity
+            android:name=".view.principle.ViewPrincipleActivity"
+            android:label="@string/app_name"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

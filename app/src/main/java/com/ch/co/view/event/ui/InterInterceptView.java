@@ -9,8 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-public class HorizontalScrollViewEx extends ViewGroup {
-    private static final String TAG = "HorizontalScrollViewEx";
+/**
+ * 场景2:存在同向滑动，同为竖向或者横向滑动，需判断为内部滑动还是外部滑动
+ */
+public class InterInterceptView extends ViewGroup {
+    private static final String TAG = "InterInterceptView";
 
     private int mChildrenSize;
     private int mChildWidth;
@@ -19,24 +22,21 @@ public class HorizontalScrollViewEx extends ViewGroup {
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
     private int mLastY = 0;
-    // 分别记录上次滑动的坐标(onInterceptTouchEvent)
-    private int mLastXIntercept = 0;
-    private int mLastYIntercept = 0;
 
     private Scroller mScroller;
     private VelocityTracker mVelocityTracker;
 
-    public HorizontalScrollViewEx(Context context) {
+    public InterInterceptView(Context context) {
         super(context);
         init();
     }
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs) {
+    public InterInterceptView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs, int defStyle) {
+    public InterInterceptView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -48,48 +48,25 @@ public class HorizontalScrollViewEx extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        boolean intercepted = false;
         int x = (int) event.getX();
         int y = (int) event.getY();
-
-        switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN: {
-            intercepted = false;
+        int action = event.getAction();
+        if (action == MotionEvent.ACTION_DOWN) {
+            mLastX = x;
+            mLastY = y;
             if (!mScroller.isFinished()) {
                 mScroller.abortAnimation();
-                intercepted = true;
+                return true;
             }
-            break;
+            return false;
+        } else {
+            return true;
         }
-        case MotionEvent.ACTION_MOVE: {
-            int deltaX = x - mLastXIntercept;
-            int deltaY = y - mLastYIntercept;
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                intercepted = true;
-            } else {
-                intercepted = false;
-            }
-            break;
-        }
-        case MotionEvent.ACTION_UP: {
-            intercepted = false;
-            break;
-        }
-        default:
-            break;
-        }
-
-        Log.d(TAG, "intercepted=" + intercepted);
-        mLastX = x;
-        mLastY = y;
-        mLastXIntercept = x;
-        mLastYIntercept = y;
-
-        return intercepted;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Log.d(TAG, "onTouchEvent action:" + event.getAction());
         mVelocityTracker.addMovement(event);
         int x = (int) event.getX();
         int y = (int) event.getY();
@@ -103,12 +80,14 @@ public class HorizontalScrollViewEx extends ViewGroup {
         case MotionEvent.ACTION_MOVE: {
             int deltaX = x - mLastX;
             int deltaY = y - mLastY;
+            Log.d(TAG, "move, deltaX:" + deltaX + " deltaY:" + deltaY);
             scrollBy(-deltaX, 0);
             break;
         }
         case MotionEvent.ACTION_UP: {
             int scrollX = getScrollX();
             int scrollToChildIndex = scrollX / mChildWidth;
+            Log.d(TAG, "current index:" + scrollToChildIndex);
             mVelocityTracker.computeCurrentVelocity(1000);
             float xVelocity = mVelocityTracker.getXVelocity();
             if (Math.abs(xVelocity) >= 50) {
@@ -120,6 +99,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
             int dx = mChildIndex * mChildWidth - scrollX;
             smoothScrollBy(dx, 0);
             mVelocityTracker.clear();
+            Log.d(TAG, "index:" + scrollToChildIndex + " dx:" + dx);
             break;
         }
         default:
@@ -163,6 +143,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        Log.d(TAG, "width:" + getWidth());
         int childLeft = 0;
         final int childCount = getChildCount();
         mChildrenSize = childCount;
@@ -179,15 +160,8 @@ public class HorizontalScrollViewEx extends ViewGroup {
         }
     }
 
-    /**
-     * 缓慢滚动到指定位置
-     * @param destX
-     * @param destY
-     */
-    private void smoothScrollBy(int destX, int destY) {
-        int startX = getScrollX();
-        int duration = 500;     // 移动时间，即500ms内滑向destx，效果就是慢慢滑动
-        mScroller.startScroll(startX, 0, destX - startX, 0, duration);
+    private void smoothScrollBy(int dx, int dy) {
+        mScroller.startScroll(getScrollX(), 0, dx, 0, 500);
         invalidate();
     }
 

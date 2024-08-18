@@ -10,8 +10,8 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
-public class CustomButton extends TextView {
-    private static final String TAG = "TestButton";
+public class CustomButton extends androidx.appcompat.widget.AppCompatTextView {
+    private static final String TAG = "CustomButton";
     private int mScaledTouchSlop;
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
@@ -42,7 +42,8 @@ public class CustomButton extends TextView {
         int x = (int) event.getRawX();
         int y = (int) event.getRawY();
         switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN: {
+        case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_UP: {
             break;
         }
         case MotionEvent.ACTION_MOVE: {
@@ -55,10 +56,7 @@ public class CustomButton extends TextView {
             ViewHelper.setTranslationY(this, translationY);
             break;
         }
-        case MotionEvent.ACTION_UP: {
-            break;
-        }
-        default:
+            default:
             break;
         }
 

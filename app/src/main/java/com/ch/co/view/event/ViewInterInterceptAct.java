@@ -1,76 +1,71 @@
 package com.ch.co.view.event;
 
+import static com.ch.co.utils.MyUtils.*;
 import java.util.ArrayList;
-
 import com.ch.co.R;
-import com.ch.co.view.event.ui.HorizontalScrollViewEx2;
-import com.ch.co.view.event.ui.ListViewEx;
-import com.ch.co.utils.MyUtils;
-
+import com.ch.co.view.event.ui.InterInterceptView;
+import com.ch.co.view.event.ui.ListViewOverrideDispatch;
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * 场景2:存在同向滑动，同为竖向或者横向滑动，需判断为内部滑动还是外部滑动
+ *
+ * 解决方法：
+ * 必须重写ListView的dispatchTouchEvent()方法，
+ */
 public class ViewInterInterceptAct extends Activity {
     private static final String TAG = "view event DemoActivity_2";
-
-    private HorizontalScrollViewEx2 mListContainer;
+    private InterInterceptView mListContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_event_demo_activity_2);
+        setContentView(R.layout.view_event_inter_intercept_act);
         Log.d(TAG, "onCreate");
         initView();
     }
 
     private void initView() {
         LayoutInflater inflater = getLayoutInflater();
-        mListContainer = (HorizontalScrollViewEx2) findViewById(R.id.container);
-        final int screenWidth = MyUtils.getScreenMetrics(this).widthPixels;
-        final int screenHeight = MyUtils.getScreenMetrics(this).heightPixels;
-        for (int i = 0; i < 3; i++) {
+        mListContainer = findViewById(R.id.container);
+        final int screenWidth = getScreenMetrics(this).widthPixels;
+        final int screenHeight = getScreenMetrics(this).heightPixels;
+        int pageNum = 5;
+        for (int i = 0; i < pageNum; i++) {
+
+            // 在layout中使用自定义的ListView，并重写了其dispatch()方法
             ViewGroup layout = (ViewGroup) inflater.inflate(
-                    R.layout.view_event_content_layout2, mListContainer, false);
+                    R.layout.view_event_layout_inter, mListContainer, false);
             layout.getLayoutParams().width = screenWidth;
-            TextView textView = (TextView) layout.findViewById(R.id.title);
+            TextView textView = layout.findViewById(R.id.title);
             textView.setText("page " + (i + 1));
-            layout.setBackgroundColor(Color
-                    .rgb(255 / (i + 1), 255 / (i + 1), 0));
+            layout.setBackgroundColor(setColor(i));
             createList(layout);
             mListContainer.addView(layout);
         }
     }
 
     private void createList(ViewGroup layout) {
-        ListViewEx listView = (ListViewEx) layout.findViewById(R.id.list);
-        ArrayList<String> datas = new ArrayList<String>();
+        ListViewOverrideDispatch listView = layout.findViewById(R.id.list);
+        ArrayList<String> datas = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            datas.add("name " + i);
+            datas.add("内部拦截 name " + i);
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.view_event_content_list_item, R.id.name, datas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                R.layout.adapter_content_list_item, R.id.name, datas);
         listView.setAdapter(adapter);
-        listView.setHorizontalScrollViewEx2(mListContainer);
-        listView.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
+        listView.setInterInterceptView(mListContainer);
+        listView.setOnItemClickListener((parent, view, position, id) ->
                 Toast.makeText(ViewInterInterceptAct.this, "click item",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
+                Toast.LENGTH_SHORT).show());
     }
 
     @Override

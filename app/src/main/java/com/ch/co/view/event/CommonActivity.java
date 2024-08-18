@@ -18,7 +18,7 @@ import com.ch.co.R;
 
 public class CommonActivity extends Activity implements OnClickListener, OnLongClickListener {
 
-    private static final String TAG = "TestActivity";
+    private static final String TAG = "CommonActivity";
     private static final int MESSAGE_SCROLL_TO = 1;
     private static final int FRAME_COUNT = 30;
     private static final int DELAYED_TIME = 33;

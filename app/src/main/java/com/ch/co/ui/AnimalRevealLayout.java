@@ -1,4 +1,4 @@
-package com.ch.co.bitmap12.ui;
+package com.ch.co.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,16 +10,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import java.util.ArrayList;
-
 import com.ch.co.R;
+
+import java.util.ArrayList;
 
 /**
  * 一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果，当它被点击的时候，
  * 为了性能，尽量不要在内部放入复杂的元素
  * note: long click listener is not supported current for fix compatible bug.
  */
-public class RevealLayout extends LinearLayout implements Runnable {
+public class AnimalRevealLayout extends LinearLayout implements Runnable {
 
     private static final String TAG = "DxRevealLayout";
     private static final boolean DEBUG = true;
@@ -44,18 +44,18 @@ public class RevealLayout extends LinearLayout implements Runnable {
     private View mTouchTarget;
     private DispatchUpTouchEventRunnable mDispatchUpTouchEventRunnable = new DispatchUpTouchEventRunnable();
 
-    public RevealLayout(Context context) {
+    public AnimalRevealLayout(Context context) {
         super(context);
         init();
     }
 
-    public RevealLayout(Context context, AttributeSet attrs) {
+    public AnimalRevealLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public RevealLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AnimalRevealLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

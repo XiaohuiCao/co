@@ -1,4 +1,4 @@
-package com.ch.co.view345.principle.ui;
+package com.ch.co.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-public class HorizontalScrollViewEx extends ViewGroup {
+public class AnimalHorizontalScrollViewEx extends ViewGroup {
     private static final String TAG = "HorizontalScrollViewEx";
 
     private int mChildrenSize;
@@ -26,18 +26,18 @@ public class HorizontalScrollViewEx extends ViewGroup {
     private Scroller mScroller;
     private VelocityTracker mVelocityTracker;
 
-    public HorizontalScrollViewEx(Context context) {
+    public AnimalHorizontalScrollViewEx(Context context) {
         super(context);
         init();
     }
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs) {
+    public AnimalHorizontalScrollViewEx(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs,
-            int defStyle) {
+    public AnimalHorizontalScrollViewEx(Context context, AttributeSet attrs,
+                                        int defStyle) {
         super(context, attrs, defStyle);
         init();
     }

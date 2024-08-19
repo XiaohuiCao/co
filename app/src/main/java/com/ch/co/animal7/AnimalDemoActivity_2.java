@@ -3,8 +3,8 @@ package com.ch.co.animal7;
 import java.util.ArrayList;
 
 import com.ch.co.R;
-import com.ch.co.animal7.ui.AnimalHorizontalScrollViewEx;
-import com.ryg.chapter_7.utils.MyUtils;
+import com.ch.co.ui.AnimalHorizontalScrollViewEx;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -75,7 +75,6 @@ public class AnimalDemoActivity_2 extends Activity {
                     int position, long id) {
                 Toast.makeText(AnimalDemoActivity_2.this, "click item",
                         Toast.LENGTH_SHORT).show();
-
             }
         });
     }

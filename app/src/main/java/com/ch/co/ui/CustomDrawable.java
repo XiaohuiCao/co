@@ -1,4 +1,4 @@
-package com.ch.co.drawable6.ui;
+package com.ch.co.ui;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;

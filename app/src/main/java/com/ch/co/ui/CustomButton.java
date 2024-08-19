@@ -1,4 +1,4 @@
-package com.ch.co.view345.event.ui;
+package com.ch.co.ui;
 
 import com.nineoldandroids.view.ViewHelper;
 

@@ -19,10 +19,4 @@
         android:layout_height="50dp"
         android:text="当前是 Activity C" />
 
-    <Button
-        android:id="@+id/to_view_event_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/to_view_event_main"/>
-
 </LinearLayout>

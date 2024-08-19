@@ -1,4 +1,4 @@
-package com.ch.co.animal7.ui;
+package com.ch.co.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,8 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-public class AnimalHorizontalScrollViewEx extends ViewGroup {
-    private static final String TAG = "HorizontalScrollViewEx";
+/**
+ * 场景1：存在横向和竖向滑动
+ *
+ * 解决方法：
+ * 使用外部拦截解决滑动冲突，重写onInterceptTouchEvent()方法
+ * ACTION_MOVE时判断根据坐标点判断move方向为水平或者上下
+ */
+public class ExternInterceptView extends ViewGroup {
+    private static final String TAG = "ExternInterceptView";
 
     private int mChildrenSize;
     private int mChildWidth;
@@ -19,6 +26,7 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
     private int mLastY = 0;
+
     // 分别记录上次滑动的坐标(onInterceptTouchEvent)
     private int mLastXIntercept = 0;
     private int mLastYIntercept = 0;
@@ -26,38 +34,54 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
     private Scroller mScroller;
     private VelocityTracker mVelocityTracker;
 
-    public AnimalHorizontalScrollViewEx(Context context) {
+    public ExternInterceptView(Context context) {
         super(context);
         init();
     }
 
-    public AnimalHorizontalScrollViewEx(Context context, AttributeSet attrs) {
+    public ExternInterceptView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public AnimalHorizontalScrollViewEx(Context context, AttributeSet attrs,
-                                        int defStyle) {
+    public ExternInterceptView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
     private void init() {
-        if (mScroller == null) {
-            mScroller = new Scroller(getContext());
-            mVelocityTracker = VelocityTracker.obtain();
-        }
+        mScroller = new Scroller(getContext());
+        mVelocityTracker = VelocityTracker.obtain();
+    }
+
+    /**
+     * 是否进行事件拦截
+     *
+     * @param event
+     * @return
+     */
+    private boolean isIntercept(MotionEvent event) {
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        int deltaX = x - mLastXIntercept;
+        int deltaY = y - mLastYIntercept;
+
+        mLastX = x;
+        mLastY = y;
+        mLastXIntercept = x;
+        mLastYIntercept = y;
+
+        return Math.abs(deltaX) > Math.abs(deltaY);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         boolean intercepted = false;
-        int x = (int) event.getX();
-        int y = (int) event.getY();
-
         switch (event.getAction()) {
         case MotionEvent.ACTION_DOWN: {
             intercepted = false;
+
+            // 在水平方向滑动后，再迅速竖直方向滑动，为了避免中间状态，下一个序列的点击时间仍然交给父容器处理
             if (!mScroller.isFinished()) {
                 mScroller.abortAnimation();
                 intercepted = true;
@@ -65,9 +89,7 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
             break;
         }
         case MotionEvent.ACTION_MOVE: {
-            int deltaX = x - mLastXIntercept;
-            int deltaY = y - mLastYIntercept;
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (isIntercept(event)) {
                 intercepted = true;
             } else {
                 intercepted = false;
@@ -81,13 +103,7 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
         default:
             break;
         }
-
         Log.d(TAG, "intercepted=" + intercepted);
-        mLastX = x;
-        mLastY = y;
-        mLastXIntercept = x;
-        mLastYIntercept = y;
-
         return intercepted;
     }
 
@@ -111,6 +127,7 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
         }
         case MotionEvent.ACTION_UP: {
             int scrollX = getScrollX();
+            int scrollToChildIndex = scrollX / mChildWidth;
             mVelocityTracker.computeCurrentVelocity(1000);
             float xVelocity = mVelocityTracker.getXVelocity();
             if (Math.abs(xVelocity) >= 50) {
@@ -147,11 +164,6 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         if (childCount == 0) {
             setMeasuredDimension(0, 0);
-        } else if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
-            final View childView = getChildAt(0);
-            measuredWidth = childView.getMeasuredWidth() * childCount;
-            measuredHeight = childView.getMeasuredHeight();
-            setMeasuredDimension(measuredWidth, measuredHeight);
         } else if (heightSpecMode == MeasureSpec.AT_MOST) {
             final View childView = getChildAt(0);
             measuredHeight = childView.getMeasuredHeight();
@@ -160,6 +172,11 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
             final View childView = getChildAt(0);
             measuredWidth = childView.getMeasuredWidth() * childCount;
             setMeasuredDimension(measuredWidth, heightSpaceSize);
+        } else {
+            final View childView = getChildAt(0);
+            measuredWidth = childView.getMeasuredWidth() * childCount;
+            measuredHeight = childView.getMeasuredHeight();
+            setMeasuredDimension(measuredWidth, measuredHeight);
         }
     }
 
@@ -181,8 +198,15 @@ public class AnimalHorizontalScrollViewEx extends ViewGroup {
         }
     }
 
-    private void smoothScrollBy(int dx, int dy) {
-        mScroller.startScroll(getScrollX(), 0, dx, 0, 500);
+    /**
+     * 缓慢滚动到指定位置
+     * @param destX
+     * @param destY
+     */
+    private void smoothScrollBy(int destX, int destY) {
+        int startX = getScrollX();
+        int duration = 500;     // 移动时间，即500ms内滑向destx，效果就是慢慢滑动
+        mScroller.startScroll(startX, 0, destX - startX, 0, duration);
         invalidate();
     }
 

@@ -1,4 +1,4 @@
-package com.ch.co.view345.principle.ui;
+package com.ch.co.ui;
 
 import android.content.Context;
 import android.content.res.TypedArray;

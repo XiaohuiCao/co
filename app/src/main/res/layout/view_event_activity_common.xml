@@ -13,7 +13,7 @@
         android:background="#ff0000"
         android:text="MovingButton" />
 
-    <com.ch.co.view345.event.ui.CustomButton
+    <com.ch.co.ui.CustomButton
         android:id="@+id/scroll_button"
         android:layout_width="100dp"
         android:layout_height="100dp"

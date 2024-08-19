@@ -1,4 +1,4 @@
-<com.ch.co.window8.ui.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ch.co.ui.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,15 +7,15 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/window_test"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="Window" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/window_demo1"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="System Window" />
 
-</com.ch.co.window8.ui.RevealLayout>
+</com.ch.co.ui.RevealLayout>

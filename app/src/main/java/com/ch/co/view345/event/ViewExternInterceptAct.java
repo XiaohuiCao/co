@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ch.co.R;
-import com.ch.co.view345.event.ui.ExternInterceptView;
+import com.ch.co.ui.ExternInterceptView;
 import com.ch.co.utils.MyUtils;
 
 import java.util.ArrayList;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.ch.co.R;
 import com.ch.co.bitmap12.loader.ImageLoader;
-import com.ch.co.bitmap12.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class WindowMainActivity extends Activity {
     private static final String TAG = "MainActivity";
 
     @Override
@@ -17,11 +17,11 @@ public class MainActivity extends Activity {
     }
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.button1) {
+        if (v.getId() == R.id.window_test) {
             Intent intent = new Intent(this, WindowTestActivity.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.button2) {
-            Intent intent = new Intent(this, DemoActivity_1.class);
+        } else if (v.getId() == R.id.window_demo1) {
+            Intent intent = new Intent(this, WindowDemoActivity_1.class);
             startActivity(intent);
         }
     }

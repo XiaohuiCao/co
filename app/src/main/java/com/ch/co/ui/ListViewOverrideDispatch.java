@@ -1,4 +1,4 @@
-package com.ch.co.view345.event.ui;
+package com.ch.co.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;

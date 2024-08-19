@@ -18,7 +18,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-public class MainActivity extends Activity {
+public class IpcMainActivity extends Activity {
 
     private static final String TAG = "MainActivity";
 
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         UserManager.sUserId = 2;
         findViewById(R.id.to_act_b).setOnClickListener(v -> {
             Intent intent = new Intent();
-            intent.setClass(MainActivity.this, BActivity.class);
+            intent.setClass(IpcMainActivity.this, BActivity.class);
             User user = new User(0, "jake", true);
             user.book = new Book();
             intent.putExtra("extra_user", (Serializable) user);

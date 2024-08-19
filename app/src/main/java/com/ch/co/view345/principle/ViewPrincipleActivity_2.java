@@ -2,7 +2,7 @@ package com.ch.co.view345.principle;
 
 import java.util.ArrayList;
 import com.ch.co.R;
-import com.ch.co.view345.principle.ui.HorizontalScrollViewEx;
+import com.ch.co.ui.HorizontalScrollViewEx;
 import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;

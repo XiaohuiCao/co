@@ -3,12 +3,13 @@ package com.ch.co.window8;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
 import com.ch.co.R;
 
-public class DemoActivity_1 extends Activity {
+public class WindowDemoActivity_1 extends Activity {
     private static final String TAG = "DemoActivity_1";
 
     @Override

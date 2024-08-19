@@ -1,4 +1,4 @@
-package com.ch.co.view345.event.ui;
+package com.ch.co.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,14 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 
 /**
- * 场景1：存在横向和竖向滑动
- *
- * 解决方法：
- * 使用外部拦截解决滑动冲突，重写onInterceptTouchEvent()方法
- * ACTION_MOVE时判断根据坐标点判断move方向为水平或者上下
+ * 场景2:存在同向滑动，同为竖向或者横向滑动，需判断为内部滑动还是外部滑动
  */
-public class ExternInterceptView extends ViewGroup {
-    private static final String TAG = "ExternInterceptView";
+public class InterInterceptView extends ViewGroup {
+    private static final String TAG = "InterInterceptView";
 
     private int mChildrenSize;
     private int mChildWidth;
@@ -27,24 +23,20 @@ public class ExternInterceptView extends ViewGroup {
     private int mLastX = 0;
     private int mLastY = 0;
 
-    // 分别记录上次滑动的坐标(onInterceptTouchEvent)
-    private int mLastXIntercept = 0;
-    private int mLastYIntercept = 0;
-
     private Scroller mScroller;
     private VelocityTracker mVelocityTracker;
 
-    public ExternInterceptView(Context context) {
+    public InterInterceptView(Context context) {
         super(context);
         init();
     }
 
-    public ExternInterceptView(Context context, AttributeSet attrs) {
+    public InterInterceptView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public ExternInterceptView(Context context, AttributeSet attrs, int defStyle) {
+    public InterInterceptView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -54,61 +46,27 @@ public class ExternInterceptView extends ViewGroup {
         mVelocityTracker = VelocityTracker.obtain();
     }
 
-    /**
-     * 是否进行事件拦截
-     *
-     * @param event
-     * @return
-     */
-    private boolean isIntercept(MotionEvent event) {
-        int x = (int) event.getX();
-        int y = (int) event.getY();
-        int deltaX = x - mLastXIntercept;
-        int deltaY = y - mLastYIntercept;
-
-        mLastX = x;
-        mLastY = y;
-        mLastXIntercept = x;
-        mLastYIntercept = y;
-
-        return Math.abs(deltaX) > Math.abs(deltaY);
-    }
-
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        boolean intercepted = false;
-        switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN: {
-            intercepted = false;
-
-            // 在水平方向滑动后，再迅速竖直方向滑动，为了避免中间状态，下一个序列的点击时间仍然交给父容器处理
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        int action = event.getAction();
+        if (action == MotionEvent.ACTION_DOWN) {
+            mLastX = x;
+            mLastY = y;
             if (!mScroller.isFinished()) {
                 mScroller.abortAnimation();
-                intercepted = true;
+                return true;
             }
-            break;
+            return false;
+        } else {
+            return true;
         }
-        case MotionEvent.ACTION_MOVE: {
-            if (isIntercept(event)) {
-                intercepted = true;
-            } else {
-                intercepted = false;
-            }
-            break;
-        }
-        case MotionEvent.ACTION_UP: {
-            intercepted = false;
-            break;
-        }
-        default:
-            break;
-        }
-        Log.d(TAG, "intercepted=" + intercepted);
-        return intercepted;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Log.d(TAG, "onTouchEvent action:" + event.getAction());
         mVelocityTracker.addMovement(event);
         int x = (int) event.getX();
         int y = (int) event.getY();
@@ -122,12 +80,14 @@ public class ExternInterceptView extends ViewGroup {
         case MotionEvent.ACTION_MOVE: {
             int deltaX = x - mLastX;
             int deltaY = y - mLastY;
+            Log.d(TAG, "move, deltaX:" + deltaX + " deltaY:" + deltaY);
             scrollBy(-deltaX, 0);
             break;
         }
         case MotionEvent.ACTION_UP: {
             int scrollX = getScrollX();
             int scrollToChildIndex = scrollX / mChildWidth;
+            Log.d(TAG, "current index:" + scrollToChildIndex);
             mVelocityTracker.computeCurrentVelocity(1000);
             float xVelocity = mVelocityTracker.getXVelocity();
             if (Math.abs(xVelocity) >= 50) {
@@ -139,6 +99,7 @@ public class ExternInterceptView extends ViewGroup {
             int dx = mChildIndex * mChildWidth - scrollX;
             smoothScrollBy(dx, 0);
             mVelocityTracker.clear();
+            Log.d(TAG, "index:" + scrollToChildIndex + " dx:" + dx);
             break;
         }
         default:
@@ -182,6 +143,7 @@ public class ExternInterceptView extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        Log.d(TAG, "width:" + getWidth());
         int childLeft = 0;
         final int childCount = getChildCount();
         mChildrenSize = childCount;
@@ -198,15 +160,8 @@ public class ExternInterceptView extends ViewGroup {
         }
     }
 
-    /**
-     * 缓慢滚动到指定位置
-     * @param destX
-     * @param destY
-     */
-    private void smoothScrollBy(int destX, int destY) {
-        int startX = getScrollX();
-        int duration = 500;     // 移动时间，即500ms内滑向destx，效果就是慢慢滑动
-        mScroller.startScroll(startX, 0, destX - startX, 0, duration);
+    private void smoothScrollBy(int dx, int dy) {
+        mScroller.startScroll(getScrollX(), 0, dx, 0, 500);
         invalidate();
     }
 

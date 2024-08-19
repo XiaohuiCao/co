@@ -1,4 +1,4 @@
-<com.ch.co.animal7.ui.AnimalRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ch.co.ui.AnimalRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,4 +25,4 @@
         android:onClick="onButtonClick"
         android:text="LayoutAnimation" />
 
-</com.ch.co.animal7.ui.AnimalRevealLayout>
+</com.ch.co.ui.AnimalRevealLayout>

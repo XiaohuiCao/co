@@ -18,14 +18,8 @@ public class CActivity extends Activity {
         setContentView(R.layout.ipc_activity_c);
         findViewById(R.id.to_act_main).setOnClickListener(v -> {
             Intent intent = new Intent();
-            intent.setClass(CActivity.this, MainActivity.class);
+            intent.setClass(CActivity.this, IpcMainActivity.class);
             intent.putExtra("time", System.currentTimeMillis());
-            startActivity(intent);
-        });
-
-        findViewById(R.id.to_view_event_main).setOnClickListener(view -> {
-            Intent intent = new Intent();
-            intent.setClass(this, ViewEventMainActivity.class);
             startActivity(intent);
         });
         Log.d(TAG, "onCreate");

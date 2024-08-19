@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ch.co.R;
-import com.ch.co.drawable6.ui.CustomDrawable;
+import com.ch.co.ui.CustomDrawable;
 
 public class DrawableMainActivity extends Activity {
     private static final String TAG = "MainActivity";

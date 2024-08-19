@@ -1,4 +1,4 @@
-package com.ch.co.view345.remote.ui;
+package com.ch.co.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;

@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.ch.co.R;
-import com.ch.co.bitmap12.utils.MyUtils;
+import com.ch.co.utils.MyUtils;
 
 import android.annotation.TargetApi;
 import android.content.Context;

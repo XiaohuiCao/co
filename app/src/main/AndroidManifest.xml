@@ -42,14 +42,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".ipc.MainActivity"
-            android:configChanges="orientation|screenSize"
-            android:launchMode="standard"
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ipc.IpcMainActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:exported="true">
         </activity>
         <activity
             android:name=".ipc.BActivity"
@@ -58,37 +63,22 @@
         <activity
             android:name=".ipc.CActivity"
             android:configChanges="screenLayout"
-            android:process="com.ch.co.ipc.remote"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:process="com.ch.co.ipc.remote">
         </activity>
         <activity
             android:name=".ipc.aidl.BookManagerActivity"
-            android:label="@string/title_activity_book_manager"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_book_manager">
         </activity>
         <activity
             android:name=".ipc.messenger.MessengerActivity"
-            android:label="@string/title_activity_messenger"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_messenger">
         </activity>
 
         <service
             android:name=".ipc.messenger.MessengerService"
             android:process=":remote"
-            android:exported="true"
-            android:permission="com.ch.co.ipc.SERVICE">
+            android:permission="com.ch.co.ipc.SERVICE"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.ch.co.ipc.MessengerService.launch" />
             </intent-filter>
@@ -100,12 +90,7 @@
 
         <activity
             android:name=".ipc.provider.ProviderActivity"
-            android:label="@string/title_activity_provider"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_provider">
         </activity>
 
         <provider
@@ -122,12 +107,7 @@
         <activity
             android:name=".ipc.socket.TCPClientActivity"
             android:label="@string/title_activity_tcpclient"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <service
@@ -136,12 +116,7 @@
 
         <activity
             android:name=".ipc.binderpool.BinderPoolActivity"
-            android:label="@string/title_activity_binder_pool"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_binder_pool">
         </activity>
 
         <activity
@@ -161,12 +136,7 @@
             android:launchMode="standard" />
         <activity
             android:name=".view345.event.ViewEventMainActivity"
-            android:label="@string/app_name"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".view345.principle.ViewprincipleTestActivity"
@@ -185,12 +155,7 @@
             android:launchMode="standard" />
         <activity
             android:name=".view345.principle.ViewPrincipleMainActivity"
-            android:label="@string/app_name"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/app_name">
         </activity>
 
         <activity
@@ -201,24 +166,17 @@
         <activity
             android:name=".view345.remote.ViewRemoteDemoActivity_2"
             android:configChanges="screenLayout"
-            android:exported="true"
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
             android:name=".view345.remote.ViewRemoteDemoActivity_1"
             android:configChanges="screenLayout"
-            android:exported="true"
             android:label="@string/title_scene_2"
             android:launchMode="standard" />
         <activity
             android:name=".view345.remote.ViewRemoteMainActivity"
             android:label="@string/app_name"
-            android:process=":remote"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
-            </intent-filter>
+            android:process=":remote">
         </activity>
         <receiver android:name=".view345.remote.ViewRemoteAppWidgetProvider"
             android:exported="true">
@@ -257,9 +215,23 @@
             android:name=".animal7.AnimalMainActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".window8.WindowMainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".window8.WindowDemoActivity_1"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".window8.WindowTestActivity"
+            android:label="@string/app_name" >
+        </activity>
 
-
-
+        <activity
+            android:name=".bitmap12.BitMapMainActivity"
+            android:label="@string/app_name" >
+        </activity>
 
     </application>
 

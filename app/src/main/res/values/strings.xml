@@ -10,7 +10,21 @@
     <string name="title_activity_tcpclient">TCPClientActivity</string>
     <string name="title_activity_binder_pool">BinderPoolActivity</string>
     <string name="title_scene_1">demo</string>
-    <string name="to_view_event_main">跳转至view事件页面</string>
     <string name="title_scene_2">"5 zhang remote view "</string>
+    <string name="next">下一个</string>
+    <string name="lorem_ipsum">这是第一个程序页面</string>
+    <string name="previous">上一页</string>
+    <string name="first_fragment_label">首个fragment label</string>
+    <string name="second_fragment_label">第2个fragment label</string>
+    <string name="action_settings">settings</string>
+    <string name="ipc2">ipc2</string>
+    <string name="view_event3">view_event3</string>
+    <string name="view_principle4">view_principle4</string>
+    <string name="view_remote5">view_remote5</string>
+    <string name="drawable6">drawable6</string>
+    <string name="animal7">animal7</string>
+    <string name="window8">window8</string>
+    <string name="bitmap12">bitmap12</string>
+    <string name="thread_poll11">thread_poll11</string>
 
 </resources>

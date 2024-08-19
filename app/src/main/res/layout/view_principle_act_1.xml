@@ -5,7 +5,7 @@
     android:background="#ffffff"
     android:orientation="vertical" >
 
-    <com.ch.co.view345.principle.ui.CircleView
+    <com.ch.co.ui.CircleView
         android:id="@+id/circleView1"
         android:layout_width="wrap_content"
         android:layout_height="100dp"

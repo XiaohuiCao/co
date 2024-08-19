@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:background="#000000"
+        android:background="#4CAF50"
         android:padding="20dp"
-        app:circle_color="@color/light_green" />
+        app:circle_color="#FF9800" />
 
 </LinearLayout>

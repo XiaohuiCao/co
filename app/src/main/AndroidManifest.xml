@@ -122,7 +122,6 @@
         <activity
             android:name=".view345.event.CommonActivity"
             android:configChanges="orientation|screenSize"
-            android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
             android:name=".view345.event.ViewExternInterceptAct"
@@ -135,33 +134,20 @@
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view345.event.ViewEventMainActivity"
-            android:label="@string/app_name">
+            android:name=".view345.event.ViewEventMainActivity">
         </activity>
-        <activity
-            android:name=".view345.principle.ViewprincipleTestActivity"
-            android:configChanges="orientation|screenSize"
-            android:label="@string/app_name"
-            android:launchMode="standard" />
         <activity
             android:name=".view345.principle.ViewPrincipleActivity_1"
             android:configChanges="screenLayout"
             android:label="@string/title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view345.principle.ViewPrincipleActivity_2"
-            android:configChanges="screenLayout"
-            android:label="@string/app_name"
-            android:launchMode="standard" />
-        <activity
-            android:name=".view345.principle.ViewPrincipleMainActivity"
-            android:label="@string/app_name">
+            android:name=".view345.principle.ViewPrincipleMainActivity">
         </activity>
 
         <activity
             android:name=".view345.remote.ViewRemoteTestActivity"
             android:configChanges="orientation|screenSize"
-            android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
             android:name=".view345.remote.ViewRemoteDemoActivity_2"
@@ -175,7 +161,6 @@
             android:launchMode="standard" />
         <activity
             android:name=".view345.remote.ViewRemoteMainActivity"
-            android:label="@string/app_name"
             android:process=":remote">
         </activity>
         <receiver android:name=".view345.remote.ViewRemoteAppWidgetProvider"
@@ -192,14 +177,12 @@
         </receiver>
 
         <activity
-            android:name=".drawable6.DrawableMainActivity"
-            android:label="@string/app_name" >
+            android:name=".drawable6.DrawableMainActivity">
         </activity>
 
         <activity
             android:name=".animal7.AnimalTestActivity"
             android:configChanges="orientation|screenSize"
-            android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
             android:name=".animal7.AnimalDemoActivity_1"
@@ -209,28 +192,22 @@
         <activity
             android:name=".animal7.AnimalDemoActivity_2"
             android:configChanges="screenLayout"
-            android:label="@string/app_name"
             android:launchMode="standard" />
         <activity
-            android:name=".animal7.AnimalMainActivity"
-            android:label="@string/app_name" >
+            android:name=".animal7.AnimalMainActivity">
         </activity>
         <activity
-            android:name=".window8.WindowMainActivity"
-            android:label="@string/app_name" >
+            android:name=".window8.WindowMainActivity">
         </activity>
         <activity
-            android:name=".window8.WindowDemoActivity_1"
-            android:label="@string/app_name" >
+            android:name=".window8.WindowDemoActivity_1">
         </activity>
         <activity
-            android:name=".window8.WindowTestActivity"
-            android:label="@string/app_name" >
+            android:name=".window8.WindowTestActivity">
         </activity>
 
         <activity
-            android:name=".bitmap12.BitMapMainActivity"
-            android:label="@string/app_name" >
+            android:name=".bitmap12.BitMapMainActivity">
         </activity>
 
     </application>

@@ -16,6 +16,7 @@ import com.ch.co.bitmap12.BitMapMainActivity;
 import com.ch.co.databinding.ActivityMainBinding;
 import com.ch.co.drawable6.DrawableMainActivity;
 import com.ch.co.ipc.IpcMainActivity;
+import com.ch.co.threadpool11.ThreadPoolMainActivity;
 import com.ch.co.view345.event.ViewEventMainActivity;
 import com.ch.co.view345.principle.ViewPrincipleMainActivity;
 import com.ch.co.view345.remote.ViewRemoteMainActivity;
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setClass(this, WindowMainActivity.class);
             startActivity(intent);});
+        binding.threadPoll11.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(this, ThreadPoolMainActivity.class);
+            startActivity(intent);
+        });
         binding.bitmap12.setOnClickListener(view -> {
             Intent intent = new Intent();
             intent.setClass(this, BitMapMainActivity.class);

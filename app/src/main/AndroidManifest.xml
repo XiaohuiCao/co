@@ -205,7 +205,9 @@
         <activity
             android:name=".window8.WindowTestActivity">
         </activity>
-
+        <activity
+            android:name=".threadpool11.ThreadPoolMainActivity">
+        </activity>
         <activity
             android:name=".bitmap12.BitMapMainActivity">
         </activity>

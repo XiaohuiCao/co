@@ -21,8 +21,7 @@ public class ViewRemoteDemoActivity_2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_remote_demo_2);
         Log.d(TAG, "onCreate");
-        Toast.makeText(this, getIntent().getStringExtra("sid"),
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getIntent().getStringExtra("sid"), Toast.LENGTH_SHORT).show();
         initView();
     }
 
@@ -43,5 +42,4 @@ public class ViewRemoteDemoActivity_2 extends Activity {
         intent.putExtra(MyConstants.EXTRA_REMOTE_VIEWS, remoteViews);
         sendBroadcast(intent);
     }
-
 }

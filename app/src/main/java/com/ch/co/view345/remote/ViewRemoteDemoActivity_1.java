@@ -16,7 +16,6 @@ public class ViewRemoteDemoActivity_1 extends Activity {
     }
 
     private void initView() {
-        Toast.makeText(this, getIntent().getStringExtra("sid"),
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getIntent().getStringExtra("sid"), Toast.LENGTH_SHORT).show();
     }
 }

@@ -70,7 +70,7 @@ public class ViewRemoteTestActivity extends Activity implements OnClickListener 
                     0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             System.out.println(pendingIntent);
             RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.layout_notification);
-            remoteViews.setTextViewText(R.id.msg, "chapter_5: " + sId);
+            remoteViews.setTextViewText(R.id.msg, "remote: " + sId);
             remoteViews.setImageViewResource(R.id.icon, R.drawable.icon1);
             PendingIntent openActivity2PendingIntent = PendingIntent.getActivity(this,
                     0, new Intent(this, ViewRemoteDemoActivity_2.class), PendingIntent.FLAG_UPDATE_CURRENT);
@@ -81,5 +81,4 @@ public class ViewRemoteTestActivity extends Activity implements OnClickListener 
             manager.notify(sId, notification);
         }
     }
-
 }

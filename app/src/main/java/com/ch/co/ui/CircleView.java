@@ -10,9 +10,12 @@ import android.view.View;
 
 import com.ch.co.R;
 
+/**
+ * 重写onDraw，和onMeasure
+ */
 public class CircleView extends View {
 
-    private int mColor = Color.RED;
+    private int mColor = Color.BLUE;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public CircleView(Context context) {
@@ -52,6 +55,11 @@ public class CircleView extends View {
         }
     }
 
+    /**
+     * 未设置padding时，wrap_content的效果类似于match_parent;
+     * 设置padding，再使用wrap_content的效果才真的实现
+     * @param canvas
+     */
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);

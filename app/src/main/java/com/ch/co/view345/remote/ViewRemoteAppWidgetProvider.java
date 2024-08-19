@@ -54,7 +54,6 @@ public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
                                 context, ViewRemoteAppWidgetProvider.class),remoteViews);
                         SystemClock.sleep(30);
                     }
-
                 }
             }).start();
         }
@@ -75,7 +74,6 @@ public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
             int appWidgetId = appWidgetIds[i];
             onWidgetUpdate(context, appWidgetManager, appWidgetId);
         }
-
     }
 
     /**
@@ -95,8 +93,7 @@ public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
         // "窗口小部件"点击事件发送的Intent广播
         Intent intentClick = new Intent();
         intentClick.setAction(CLICK_ACTION);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0,
-                intentClick, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intentClick, 0);
         remoteViews.setOnClickPendingIntent(R.id.imageView1, pendingIntent);
         appWidgeManger.updateAppWidget(appWidgetId, remoteViews);
     }

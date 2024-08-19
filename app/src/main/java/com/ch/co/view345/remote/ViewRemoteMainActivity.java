@@ -15,7 +15,6 @@ import com.ch.co.utils.MyConstants;
 
 public class ViewRemoteMainActivity extends Activity {
     private static final String TAG = "MainActivity";
-
     private LinearLayout mRemoteViewsContent;
 
     private BroadcastReceiver mRemoteViewsReceiver = new BroadcastReceiver() {
@@ -65,5 +64,4 @@ public class ViewRemoteMainActivity extends Activity {
             startActivity(intent);
         }
     }
-
 }

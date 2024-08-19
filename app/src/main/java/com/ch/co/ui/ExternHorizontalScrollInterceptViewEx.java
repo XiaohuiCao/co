@@ -200,8 +200,8 @@ public class ExternHorizontalScrollInterceptViewEx extends ViewGroup {
 
     /**
      * 缓慢滚动到指定位置
-     * @param destX
-     * @param destY
+     * @param dx
+     * @param dy
      */
     private void smoothScrollBy(int dx, int dy) {
         mScroller.startScroll(getScrollX(), 0, dx, 0, 500);

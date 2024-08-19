@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ch.co.R;
-import com.ch.co.ui.ExternInterceptView;
+import com.ch.co.ui.ExternHorizontalScrollInterceptViewEx;
 import com.ch.co.utils.MyUtils;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class ViewExternInterceptAct extends Activity {
     private static final String TAG = "ViewExternInterceptAct";
 
-    private ExternInterceptView mListContainer;
+    private ExternHorizontalScrollInterceptViewEx mListContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

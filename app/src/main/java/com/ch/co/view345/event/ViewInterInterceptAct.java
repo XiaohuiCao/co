@@ -3,7 +3,7 @@ package com.ch.co.view345.event;
 import static com.ch.co.utils.MyUtils.*;
 import java.util.ArrayList;
 import com.ch.co.R;
-import com.ch.co.ui.InterInterceptView;
+import com.ch.co.ui.InterHorizontalScrollInterceptViewEx;
 import com.ch.co.ui.ListViewOverrideDispatch;
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,7 +23,7 @@ import android.widget.Toast;
  */
 public class ViewInterInterceptAct extends Activity {
     private static final String TAG = "view event DemoActivity_2";
-    private InterInterceptView mListContainer;
+    private InterHorizontalScrollInterceptViewEx mListContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

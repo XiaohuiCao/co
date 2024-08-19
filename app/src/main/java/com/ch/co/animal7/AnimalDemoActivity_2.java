@@ -3,7 +3,7 @@ package com.ch.co.animal7;
 import java.util.ArrayList;
 
 import com.ch.co.R;
-import com.ch.co.ui.AnimalHorizontalScrollViewEx;
+import com.ch.co.ui.ExternHorizontalScrollInterceptViewEx;
 import com.ch.co.utils.MyUtils;
 
 import android.app.Activity;
@@ -18,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ import android.widget.AdapterView.OnItemClickListener;
 public class AnimalDemoActivity_2 extends Activity {
     private static final String TAG = "DemoActivity_2";
 
-    private AnimalHorizontalScrollViewEx mListContainer;
+    private ExternHorizontalScrollInterceptViewEx mListContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class AnimalDemoActivity_2 extends Activity {
 
     private void initView() {
         LayoutInflater inflater = getLayoutInflater();
-        mListContainer = (AnimalHorizontalScrollViewEx) findViewById(R.id.container);
+        mListContainer = (ExternHorizontalScrollInterceptViewEx) findViewById(R.id.container);
         final int screenWidth = MyUtils.getScreenMetrics(this).widthPixels;
         final int screenHeight = MyUtils.getScreenMetrics(this).heightPixels;
         for (int i = 0; i < 1; i++) {

@@ -5,7 +5,7 @@
     android:background="#ffffff"
     android:orientation="vertical" >
 
-    <com.ch.co.ui.InterInterceptView
+    <com.ch.co.ui.InterHorizontalScrollInterceptViewEx
         android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />

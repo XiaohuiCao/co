@@ -20,7 +20,7 @@ import android.widget.ListView;
 public class ListViewOverrideDispatch extends ListView {
     private static final String TAG = "ListViewEx";
 
-    private InterInterceptView mInterView;
+    private InterHorizontalScrollInterceptViewEx mInterView;
 
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
@@ -38,7 +38,7 @@ public class ListViewOverrideDispatch extends ListView {
         super(context, attrs, defStyle);
     }
 
-    public void setInterInterceptView(InterInterceptView interView) {
+    public void setInterInterceptView(InterHorizontalScrollInterceptViewEx interView) {
         mInterView = interView;
     }
 

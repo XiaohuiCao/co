@@ -6,12 +6,12 @@
     android:orientation="vertical" >
 
     <com.ch.co.ui.CircleView
-        android:id="@+id/circleView1"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:id="@+id/circle_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_margin="20dp"
-        android:background="#030030"
+        android:background="#FFEB3B"
         android:padding="20dp"
-        app:circle_color="@color/light_green" />
+        app:circle_color="@color/reveal_color" />
 
 </LinearLayout>

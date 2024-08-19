@@ -36,8 +36,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
         init();
     }
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs,
-            int defStyle) {
+    public HorizontalScrollViewEx(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }

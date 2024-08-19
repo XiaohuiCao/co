@@ -26,9 +26,9 @@ public class CircleView extends View {
 
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
-        mColor = a.getColor(R.styleable.CircleView_circle_color, Color.RED);
-        a.recycle();
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
+        mColor = typedArray.getColor(R.styleable.CircleView_circle_color, Color.RED);
+        typedArray.recycle();
         init();
     }
 
@@ -43,8 +43,7 @@ public class CircleView extends View {
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
-        if (widthSpecMode == MeasureSpec.AT_MOST
-                && heightSpecMode == MeasureSpec.AT_MOST) {
+        if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(200, 200);
         } else if (widthSpecMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(200, heightSpecSize);
@@ -63,7 +62,6 @@ public class CircleView extends View {
         int width = getWidth() - paddingLeft - paddingRight;
         int height = getHeight() - paddingTop - paddingBottom;
         int radius = Math.min(width, height) / 2;
-        canvas.drawCircle(paddingLeft + width / 2, paddingTop + height / 2,
-                radius, mPaint);
+        canvas.drawCircle(paddingLeft + width / 2, paddingTop + height / 2, radius, mPaint);
     }
 }

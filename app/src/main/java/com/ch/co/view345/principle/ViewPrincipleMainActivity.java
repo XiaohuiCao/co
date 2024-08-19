@@ -18,14 +18,8 @@ public class ViewPrincipleMainActivity extends Activity {
     }
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.button1) {
-            Intent intent = new Intent(this, ViewprincipleTestActivity.class);
-            startActivity(intent);
-        } else if (v.getId() == R.id.button2) {
+        if (v.getId() == R.id.btn_circle_view) {
             Intent intent = new Intent(this, ViewPrincipleActivity_1.class);
-            startActivity(intent);
-        } else if (v.getId() == R.id.button3) {
-            Intent intent = new Intent(this, ViewPrincipleActivity_2.class);
             startActivity(intent);
         }
     }

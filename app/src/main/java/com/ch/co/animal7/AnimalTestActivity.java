@@ -25,5 +25,4 @@ public class AnimalTestActivity extends Activity {
         super.finish();
         overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
     }
-
 }

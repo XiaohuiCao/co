@@ -33,7 +33,7 @@ public class ViewRemoteSendSimulatedNotifyActivity extends Activity {
     public void onButtonClick(View view) {
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.layout_simulated_notification);
         remoteViews.setTextViewText(R.id.custom_notification_msg_up, "msg from process:" + Process.myPid());
-        remoteViews.setImageViewResource(R.id.notify_icon, R.drawable.music);
+        remoteViews.setImageViewResource(R.id.notify_small_icon, R.drawable.music);
         PendingIntent contentIntent = PendingIntent.getActivity(this,
                 0, new Intent(this, ViewRemoteContentIntentAct.class), PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent openMsgContentView = PendingIntent.getActivity(this, 0,

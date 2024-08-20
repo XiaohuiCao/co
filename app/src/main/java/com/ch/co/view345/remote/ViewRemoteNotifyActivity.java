@@ -28,7 +28,7 @@ public class ViewRemoteNotifyActivity extends Activity implements OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_remote_test_act);
+        setContentView(R.layout.view_remote_notify_act);
         initView();
     }
 
@@ -45,7 +45,7 @@ public class ViewRemoteNotifyActivity extends Activity implements OnClickListene
         if (view == mBtnNormalNotification) {
             sId ++;
             Notification.Builder builder = setCustomNotificationBuilder();       // 设置通知
-            NotificationChannel channel = setChannel();     // 建立通道
+            NotificationChannel channel = setChannel();                         // 建立通道
             NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
             builder.setChannelId(String.valueOf(sId));
@@ -70,10 +70,9 @@ public class ViewRemoteNotifyActivity extends Activity implements OnClickListene
 
     private Notification.Builder setCustomNotificationBuilder() {
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setContentTitle("coco custom 标题")
-                .setContentText("coco custom 内容")
+        builder.setContentTitle("coco 标题")
+                .setContentText("coco 内容")
                 .setSmallIcon(R.drawable.star)
-                .setTicker("coco custom ticker")
                 .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
                 .setChannelId(String.valueOf(sId));
@@ -83,7 +82,7 @@ public class ViewRemoteNotifyActivity extends Activity implements OnClickListene
     private RemoteViews getNotifyMsgContentView() {
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.custom_layout_notification);
         remoteViews.setTextViewText(R.id.custom_notification_msg_up, "custom remote id: " + sId);
-        remoteViews.setImageViewResource(R.id.notify_icon, R.drawable.snow);
+        remoteViews.setImageViewResource(R.id.notify_small_icon, R.drawable.snow);
         PendingIntent openMsgContentView = PendingIntent.getActivity(this,
                 0, new Intent(this, ViewRemoteSendSimulatedNotifyActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.custom_notification_msg_down, openMsgContentView);

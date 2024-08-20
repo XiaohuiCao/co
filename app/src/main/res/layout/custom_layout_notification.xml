@@ -8,8 +8,7 @@
     android:orientation="horizontal" >
 
     <ImageView
-        android:id="@+id/notify_icon"
-        android:background="#000000"
+        android:id="@+id/notify_small_icon"
         android:layout_width="40dp"
         android:scaleType="centerInside"
         android:layout_height="40dp" />

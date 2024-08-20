@@ -29,7 +29,7 @@ public class AnimalDemoActivity_1 extends Activity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-            Button button = (Button)findViewById(R.id.button1);
+            Button button = (Button)findViewById(R.id.notification_bar);
             performAnimate(button, button.getWidth(), 500);
         }
     }

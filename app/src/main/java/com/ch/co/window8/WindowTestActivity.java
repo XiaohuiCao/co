@@ -32,7 +32,7 @@ public class WindowTestActivity extends Activity implements OnTouchListener {
     }
 
     private void initView() {
-        mCreateWindowButton = (Button) findViewById(R.id.button1);
+        mCreateWindowButton = (Button) findViewById(R.id.notification_bar);
         mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
     }
 

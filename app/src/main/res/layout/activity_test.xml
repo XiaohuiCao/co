@@ -6,14 +6,14 @@
     android:padding="10px" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/notification_bar"
         android:layout_width="wrap_content"
         android:layout_height="100px"
         android:background="#ff0000"
         android:text="MovingButton" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/send_simu_notification_bar"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:background="#000000"

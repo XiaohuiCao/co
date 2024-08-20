@@ -58,9 +58,9 @@ public class TCPClientActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ipc_activity_tcpclient);
         mMessageTextView = (TextView) findViewById(R.id.msg_container);
-        mSendButton = (Button) findViewById(R.id.send);
+        mSendButton = (Button) findViewById(R.id.remote_view_send_msg);
         mSendButton.setOnClickListener(this);
-        mMessageEditText = (EditText) findViewById(R.id.msg);
+        mMessageEditText = (EditText) findViewById(R.id.custom_notification_msg_up);
         Intent service = new Intent(this, TCPServerService.class);
         startService(service);
         new Thread(() -> connectTCPServer()).start();

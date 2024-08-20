@@ -126,12 +126,12 @@
         <activity
             android:name=".view345.event.ViewExternInterceptAct"
             android:configChanges="screenLayout"
-            android:label="@string/title_scene_1"
+            android:label="@string/remote_view_title_scene_1"
             android:launchMode="standard" />
         <activity
             android:name=".view345.event.ViewInterInterceptAct"
             android:configChanges="screenLayout"
-            android:label="@string/title_scene_1"
+            android:label="@string/remote_view_title_scene_1"
             android:launchMode="standard" />
         <activity
             android:name=".view345.event.ViewEventMainActivity">
@@ -139,25 +139,25 @@
         <activity
             android:name=".view345.principle.ViewPrincipleActivity_1"
             android:configChanges="screenLayout"
-            android:label="@string/title_scene_1"
+            android:label="@string/remote_view_title_scene_1"
             android:launchMode="standard" />
         <activity
             android:name=".view345.principle.ViewPrincipleMainActivity">
         </activity>
 
         <activity
-            android:name=".view345.remote.ViewRemoteTestActivity"
+            android:name=".view345.remote.ViewRemoteNotifyActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="standard" />
         <activity
-            android:name=".view345.remote.ViewRemoteDemoActivity_2"
+            android:name=".view345.remote.ViewRemoteSendSimulatedNotifyActivity"
             android:configChanges="screenLayout"
-            android:label="@string/title_scene_1"
+            android:label="@string/remote_view_title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".view345.remote.ViewRemoteDemoActivity_1"
+            android:name=".view345.remote.ViewRemoteContentIntentAct"
             android:configChanges="screenLayout"
-            android:label="@string/title_scene_2"
+            android:label="@string/remote_view_title_scene_2"
             android:launchMode="standard" />
         <activity
             android:name=".view345.remote.ViewRemoteMainActivity"
@@ -171,7 +171,7 @@
             </meta-data>
 
             <intent-filter>
-                <action android:name="com.ch.co.view.remote.action.CLICK" />
+                <action android:name="com.ch.co.view345.remote.action.CLICK" />
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
         </receiver>
@@ -187,7 +187,7 @@
         <activity
             android:name=".animal7.AnimalDemoActivity_1"
             android:configChanges="screenLayout"
-            android:label="@string/title_scene_1"
+            android:label="@string/remote_view_title_scene_1"
             android:launchMode="standard" />
         <activity
             android:name=".animal7.AnimalDemoActivity_2"

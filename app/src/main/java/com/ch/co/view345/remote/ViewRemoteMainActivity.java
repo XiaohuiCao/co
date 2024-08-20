@@ -1,5 +1,6 @@
 package com.ch.co.view345.remote;
 
+import static com.ch.co.utils.MyConstants.*;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,19 +10,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RemoteViews;
-
 import com.ch.co.R;
-import com.ch.co.utils.MyConstants;
 
 public class ViewRemoteMainActivity extends Activity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "ViewRemoteMainActivity";
     private LinearLayout mRemoteViewsContent;
 
     private BroadcastReceiver mRemoteViewsReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            RemoteViews remoteViews = intent
-                    .getParcelableExtra(MyConstants.EXTRA_REMOTE_VIEWS);
+            RemoteViews remoteViews = intent.getParcelableExtra(EXTRA_REMOTE_VIEWS);
             if (remoteViews != null) {
                 updateUI(remoteViews);
             }
@@ -37,7 +35,7 @@ public class ViewRemoteMainActivity extends Activity {
     
     private void initView() {
         mRemoteViewsContent = (LinearLayout) findViewById(R.id.remote_views_content);
-        IntentFilter filter = new IntentFilter(MyConstants.REMOTE_ACTION);
+        IntentFilter filter = new IntentFilter(REMOTE_ACTION);
         registerReceiver(mRemoteViewsReceiver, filter);
     }
 
@@ -56,11 +54,11 @@ public class ViewRemoteMainActivity extends Activity {
     }
     
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.button1) {
-            Intent intent = new Intent(this, ViewRemoteTestActivity.class);
+        if (v.getId() == R.id.notification_bar) {
+            Intent intent = new Intent(this, ViewRemoteNotifyActivity.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.button2) {
-            Intent intent = new Intent(this, ViewRemoteDemoActivity_2.class);
+        } else if (v.getId() == R.id.send_simu_notification_bar) {
+            Intent intent = new Intent(this, ViewRemoteSendSimulatedNotifyActivity.class);
             startActivity(intent);
         }
     }

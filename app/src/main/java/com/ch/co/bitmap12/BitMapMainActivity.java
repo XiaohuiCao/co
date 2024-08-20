@@ -124,7 +124,7 @@ public class BitMapMainActivity extends Activity implements OnScrollListener {
 
         private ImageAdapter(Context context) {
             mInflater = LayoutInflater.from(context);
-            mDefaultBitmapDrawable = context.getResources().getDrawable(R.drawable.image_default);
+            mDefaultBitmapDrawable = context.getResources().getDrawable(R.drawable.set);
         }
 
         @Override

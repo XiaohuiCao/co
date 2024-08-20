@@ -7,16 +7,16 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/notification_bar"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
-        android:text="通知栏消息" />
+        android:text="@string/notification_bar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/send_simu_notification_bar"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
-        android:text="发送模拟通知栏消息" />
+        android:text="@string/send_simu_notification_bar" />
 
     <LinearLayout
         android:id="@+id/remote_views_content"

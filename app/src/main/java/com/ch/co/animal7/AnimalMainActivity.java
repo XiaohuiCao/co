@@ -18,11 +18,11 @@ public class AnimalMainActivity extends Activity {
     }
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.button1) {
+        if (v.getId() == R.id.notification_bar) {
             Intent intent = new Intent(this, AnimalTestActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
-        } else if (v.getId() == R.id.button2) {
+        } else if (v.getId() == R.id.send_simu_notification_bar) {
             Intent intent = new Intent(this, AnimalDemoActivity_1.class);
             startActivity(intent);
         } else if (v.getId() == R.id.button3) {

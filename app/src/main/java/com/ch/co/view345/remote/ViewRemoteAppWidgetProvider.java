@@ -13,7 +13,6 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
-
 import com.ch.co.R;
 
 public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
@@ -32,12 +31,11 @@ public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
         // 这里判断是自己的action，做自己的事情，比如小工具被点击了要干啥，这里是做一个动画效果
         if (intent.getAction().equals(CLICK_ACTION)) {
             Toast.makeText(context, "clicked it", Toast.LENGTH_SHORT).show();
-
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     Bitmap srcbBitmap = BitmapFactory.decodeResource(
-                            context.getResources(), R.drawable.icon1);
+                            context.getResources(), R.drawable.unbind);
                     AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
                     for (int i = 0; i < 37; i++) {
                         float degree = (i * 10) % 360;
@@ -63,11 +61,9 @@ public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
      * 每次窗口小部件被点击更新都调用一次该方法
      */
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-            int[] appWidgetIds) {
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         Log.i(TAG, "onUpdate");
-
         final int counter = appWidgetIds.length;
         Log.i(TAG, "counter = " + counter);
         for (int i = 0; i < counter; i++) {
@@ -83,12 +79,9 @@ public class ViewRemoteAppWidgetProvider extends AppWidgetProvider {
      * @param appWidgeManger
      * @param appWidgetId
      */
-    private void onWidgetUpdate(Context context,
-            AppWidgetManager appWidgeManger, int appWidgetId) {
-
+    private void onWidgetUpdate(Context context, AppWidgetManager appWidgeManger, int appWidgetId) {
         Log.i(TAG, "appWidgetId = " + appWidgetId);
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-                R.layout.view_remote_widget);
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.view_remote_widget);
 
         // "窗口小部件"点击事件发送的Intent广播
         Intent intentClick = new Intent();

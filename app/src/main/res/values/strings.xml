@@ -9,8 +9,8 @@
     <string name="title_activity_tcpserver">TCPServerActivity</string>
     <string name="title_activity_tcpclient">TCPClientActivity</string>
     <string name="title_activity_binder_pool">BinderPoolActivity</string>
-    <string name="title_scene_1">demo</string>
-    <string name="title_scene_2">"5 zhang remote view "</string>
+    <string name="remote_view_title_scene_1">第5章 remote view 场景1</string>
+    <string name="remote_view_title_scene_2">"第5章 remote view  场景2"</string>
     <string name="next">下一个</string>
     <string name="lorem_ipsum">这是第一个程序页面</string>
     <string name="previous">上一页</string>
@@ -26,5 +26,12 @@
     <string name="window8">window8</string>
     <string name="bitmap12">bitmap12</string>
     <string name="thread_poll11">thread_poll11</string>
+    <string name="custom_notification_msg">自定义通知使用remote发送消息-上方消息</string>
+    <string name="custom_notification_msg_down">自定义空间使用remote发送消息-下方消息</string>
+    <string name="remote_view_send_msg">发送消息</string>
+    <string name="notification_bar">通知栏消息</string>
+    <string name="send_simu_notification_bar">发送模拟通知栏消息</string>
+    <string name="show_normal_notification">show normal notification</string>
+    <string name="show_custom_notification">show custom notification</string>
 
 </resources>

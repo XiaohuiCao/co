@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 public class AnimalMainActivity extends Activity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "AnimalMainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +18,15 @@ public class AnimalMainActivity extends Activity {
     }
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.notification_bar) {
-            Intent intent = new Intent(this, AnimalTestActivity.class);
+        if (v.getId() == R.id.btn_switch_animal) {
+            Intent intent = new Intent(this, AnimalSwitchBtnActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
-        } else if (v.getId() == R.id.send_simu_notification_bar) {
-            Intent intent = new Intent(this, AnimalDemoActivity_1.class);
+        } else if (v.getId() == R.id.btn_large_animal) {
+            Intent intent = new Intent(this, AnimalLargeActivity.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.button3) {
-            Intent intent = new Intent(this, AnimalDemoActivity_2.class);
+        } else if (v.getId() == R.id.btn_layout_list_animal) {
+            Intent intent = new Intent(this, AnimalLayoutListActivity.class);
             startActivity(intent);
         }
     }

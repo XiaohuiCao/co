@@ -7,13 +7,13 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/window_test"
+        android:id="@+id/btn_test_window"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="Window" />
 
     <Button
-        android:id="@+id/window_demo1"
+        android:id="@+id/btn_sys_window"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="System Window" />

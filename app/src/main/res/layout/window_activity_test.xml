@@ -6,7 +6,7 @@
     android:padding="10px" >
 
     <Button
-        android:id="@+id/notification_bar"
+        android:id="@+id/btn_window_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"

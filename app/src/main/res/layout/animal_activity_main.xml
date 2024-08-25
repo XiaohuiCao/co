@@ -8,19 +8,19 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/notification_bar"
+        android:id="@+id/btn_switch_animal"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="Activity切换动画" />
 
     <Button
-        android:id="@+id/send_simu_notification_bar"
+        android:id="@+id/btn_large_animal"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="Button放大动画" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_layout_list_animal"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
         android:text="LayoutAnimation" />

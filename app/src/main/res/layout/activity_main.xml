@@ -97,4 +97,13 @@
         app:layout_constraintTop_toBottomOf="@+id/thread_poll11"
         android:text="@string/bitmap12"/>
 
+    <Button
+        android:id="@+id/btn_book_2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="25dp"
+        android:background="@color/light_green"
+        app:layout_constraintTop_toBottomOf="@+id/bitmap12"
+        android:text="@string/book_name_2"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

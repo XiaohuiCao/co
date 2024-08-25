@@ -33,5 +33,8 @@
     <string name="send_simu_notification_bar">发送模拟通知栏消息</string>
     <string name="show_normal_notification">show normal notification</string>
     <string name="show_custom_notification">show custom notification</string>
+    <string name="btn_animal_large">Button会变长</string>
+    <string name="book_name_1">android 开发艺术探索</string>
+    <string name="book_name_2">android 应用开发实践教程</string>
 
 </resources>

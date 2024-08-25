@@ -6,9 +6,9 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/notification_bar"
+        android:id="@+id/btn_animal_large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/btn_animal_large" />
 
 </LinearLayout>

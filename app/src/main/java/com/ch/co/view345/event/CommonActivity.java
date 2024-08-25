@@ -1,5 +1,7 @@
 package com.ch.co.view345.event;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -69,31 +72,30 @@ public class CommonActivity extends Activity implements OnClickListener, OnLongC
     @Override
     public void onClick(View v) {
         if (v == mBtnMove) {
-            // mButton1.setTranslationX(100);
-
-            // Log.d(TAG, "button1.left=" + mButton1.getLeft());
-            // Log.d(TAG, "button1.x=" + mButton1.getX());
-            // ObjectAnimator.ofFloat(mButton1, "translationX", 0, 100)
-            // .setDuration(1000).start();
-            // MarginLayoutParams params = (MarginLayoutParams) mButton1
-            // .getLayoutParams();
-            // params.width += 100;
-            // params.leftMargin += 100;
-            // mButton1.requestLayout();
-            // mButton1.setLayoutParams(params);
-
-            // final int startX = 0;
-            // final int deltaX = 100;
-            // ValueAnimator animator = ValueAnimator.ofInt(0,
-            // 1).setDuration(1000);
-            // animator.addUpdateListener(new AnimatorUpdateListener() {
-            // @Override
-            // public void onAnimationUpdate(ValueAnimator animator) {
-            // float fraction = animator.getAnimatedFraction();
-            // mButton1.scrollTo(startX + (int) (deltaX * fraction), 0);
-            // }
-            // });
-            // animator.start();
+//             mBtnMove.setTranslationX(100);
+//             Log.d(TAG, "button1.left=" + mBtnMove.getLeft());
+//             Log.d(TAG, "button1.x=" + mBtnMove.getX());
+//             ObjectAnimator.ofFloat(mBtnMove, "translationX", 0, 100)
+//             .setDuration(1000).start();
+//             ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mBtnMove
+//             .getLayoutParams();
+//             params.width += 100;
+//             params.leftMargin += 100;
+//             mBtnMove.requestLayout();
+//             mBtnMove.setLayoutParams(params);
+//
+//             final int startX = 0;
+//             final int deltaX = 100;
+//             ValueAnimator animator = ValueAnimator.ofInt(0,
+//             1).setDuration(1000);
+//             animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//             @Override
+//             public void onAnimationUpdate(ValueAnimator animator) {
+//             float fraction = animator.getAnimatedFraction();
+//             mBtnMove.scrollTo(startX + (int) (deltaX * fraction), 0);
+//             }
+//             });
+//             animator.start();
 
             mHandler.sendEmptyMessageDelayed(MESSAGE_SCROLL_TO, DELAYED_TIME);
         }

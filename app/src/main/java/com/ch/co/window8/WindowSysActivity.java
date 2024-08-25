@@ -3,19 +3,18 @@ package com.ch.co.window8;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
 import com.ch.co.R;
 
-public class WindowDemoActivity_1 extends Activity {
-    private static final String TAG = "DemoActivity_1";
+public class WindowSysActivity extends Activity {
+    private static final String TAG = "WindowSysActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.window_demo_1);
+        setContentView(R.layout.window_sys_layout);
         initView();
     }
 
@@ -27,5 +26,4 @@ public class WindowDemoActivity_1 extends Activity {
         dialog.getWindow().setType(LayoutParams.TYPE_SYSTEM_ERROR);
         dialog.show();
     }
-
 }

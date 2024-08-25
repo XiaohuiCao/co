@@ -12,12 +12,9 @@ import android.util.Log;
 public class BookProvider extends ContentProvider {
 
     private static final String TAG = "BookProvider";
-
     public static final String AUTHORITY = "com.ch.co.book.provider";
-
     public static final Uri BOOK_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/book");
     public static final Uri USER_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/user");
-
     public static final int BOOK_URI_CODE = 0;
     public static final int USER_URI_CODE = 1;
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);

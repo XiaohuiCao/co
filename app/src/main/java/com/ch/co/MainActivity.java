@@ -16,6 +16,7 @@ import com.ch.co.bitmap12.BitMapMainActivity;
 import com.ch.co.databinding.ActivityMainBinding;
 import com.ch.co.drawable6.DrawableMainActivity;
 import com.ch.co.ipc.IpcMainActivity;
+import com.ch.co.sqlDemo.SqlMainActivity;
 import com.ch.co.threadpool11.ThreadPoolMainActivity;
 import com.ch.co.view345.event.ViewEventMainActivity;
 import com.ch.co.view345.principle.ViewPrincipleMainActivity;
@@ -72,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
         binding.bitmap12.setOnClickListener(view -> {
             Intent intent = new Intent();
             intent.setClass(this, BitMapMainActivity.class);
+            startActivity(intent);
+        });
+        binding.btnBook2.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(this, SqlMainActivity.class);
             startActivity(intent);
         });
     }

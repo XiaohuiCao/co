@@ -8,9 +8,8 @@
         android:name="com.ch.co.ipc.permission.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
     <permission
-        android:name="com.ch.co.ipc.PROVIDER"
-        android:protectionLevel="normal" />
-
+        android:name="com.ch.co.ipc.PROVIDER" android:protectionLevel="normal" />
+    <uses-permission  android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.ch.co.ipc.PROVIDER" />
     <uses-permission android:name="com.ch.co.ipc.permission.ACCESS_BOOK_SERVICE" />
@@ -87,7 +86,14 @@
             android:name=".ipc.aidl.BookManagerService"
             android:process=":remote" >
         </service>
-
+        <service
+            android:name=".ipc.aidl.PersonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.ch.co.ipc.aidl.PersonService"/>
+            </intent-filter>
+        </service>
         <activity
             android:name=".ipc.provider.ProviderActivity"
             android:label="@string/title_activity_provider">
@@ -97,6 +103,8 @@
             android:name=".ipc.provider.BookProvider"
             android:authorities="com.ch.co.ipc.book.provider"
             android:permission="com.ch.co.ipc.PROVIDER"
+            android:exported="true"
+            android:enabled="true"
             android:process=":provider" >
         </provider>
 
@@ -181,16 +189,16 @@
         </activity>
 
         <activity
-            android:name=".animal7.AnimalTestActivity"
+            android:name=".animal7.AnimalSwitchBtnActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="standard" />
         <activity
-            android:name=".animal7.AnimalDemoActivity_1"
+            android:name=".animal7.AnimalLargeActivity"
             android:configChanges="screenLayout"
             android:label="@string/remote_view_title_scene_1"
             android:launchMode="standard" />
         <activity
-            android:name=".animal7.AnimalDemoActivity_2"
+            android:name=".animal7.AnimalLayoutListActivity"
             android:configChanges="screenLayout"
             android:launchMode="standard" />
         <activity
@@ -200,7 +208,7 @@
             android:name=".window8.WindowMainActivity">
         </activity>
         <activity
-            android:name=".window8.WindowDemoActivity_1">
+            android:name=".window8.WindowSysActivity">
         </activity>
         <activity
             android:name=".window8.WindowTestActivity">
@@ -211,7 +219,21 @@
         <activity
             android:name=".bitmap12.BitMapMainActivity">
         </activity>
-
+        <activity
+            android:name=".sqlDemo.SqlMainActivity">
+        </activity>
+        <activity
+            android:name=".sqlDemo.DeleteActivity">
+        </activity>
+        <activity
+            android:name=".sqlDemo.InsertActivity">
+        </activity>
+        <activity
+            android:name=".sqlDemo.QueryActivity">
+        </activity>
+        <activity
+            android:name=".sqlDemo.UpdateActivity">
+        </activity>
     </application>
 
 </manifest>

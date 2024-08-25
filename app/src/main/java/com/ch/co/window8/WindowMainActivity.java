@@ -17,11 +17,11 @@ public class WindowMainActivity extends Activity {
     }
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.window_test) {
+        if (v.getId() == R.id.btn_test_window) {
             Intent intent = new Intent(this, WindowTestActivity.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.window_demo1) {
-            Intent intent = new Intent(this, WindowDemoActivity_1.class);
+        } else if (v.getId() == R.id.btn_sys_window) {
+            Intent intent = new Intent(this, WindowSysActivity.class);
             startActivity(intent);
         }
     }

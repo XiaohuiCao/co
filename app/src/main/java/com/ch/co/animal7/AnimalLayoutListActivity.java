@@ -18,21 +18,22 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class AnimalDemoActivity_2 extends Activity {
-    private static final String TAG = "DemoActivity_2";
+public class AnimalLayoutListActivity extends Activity {
+    private static final String TAG = "AnimalLayoutActivity";
+    private float delayTime = 0.5f;
+    private int  itemNum = 50;
 
     private ExternHorizontalScrollInterceptViewEx mListContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.animal_demo_2);
+        setContentView(R.layout.animal_layout_list_activity);
         Log.d(TAG, "onCreate");
         initView();
     }
@@ -58,25 +59,20 @@ public class AnimalDemoActivity_2 extends Activity {
         ListView listView = (ListView) layout.findViewById(R.id.list);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_item);
         LayoutAnimationController controller = new LayoutAnimationController(animation);
-        controller.setDelay(0.5f);
+        controller.setDelay(delayTime);
         controller.setOrder(LayoutAnimationController.ORDER_NORMAL);
         listView.setLayoutAnimation(controller);
         
-        ArrayList<String> datas = new ArrayList<String>();
-        for (int i = 0; i < 50; i++) {
+        ArrayList<String> datas = new ArrayList<>();
+        for (int i = 0; i < itemNum; i++) {
             datas.add("name " + i);
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.content_list_item, R.id.name, datas);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
-                Toast.makeText(AnimalDemoActivity_2.this, "click item",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        listView.setOnItemClickListener((parent, view, position, id) ->
+                Toast.makeText(AnimalLayoutListActivity.this, "点击 item",
+                Toast.LENGTH_SHORT).show());
     }
 }

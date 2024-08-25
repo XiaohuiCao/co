@@ -18,10 +18,10 @@ public class ProviderActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ipc_activity_provider);
-//         Uri uri = Uri.parse("content://com.ch.co.book.provider");
-//         getContentResolver().query(uri, null, null, null, null);
-//         getContentResolver().query(uri, null, null, null, null);
-//         getContentResolver().query(uri, null, null, null, null);
+         Uri uri = Uri.parse("content://com.ch.co.book.provider");
+         getContentResolver().query(uri, null, null, null, null);
+         getContentResolver().query(uri, null, null, null, null);
+         getContentResolver().query(uri, null, null, null, null);
 
         Uri bookUri = Uri.parse("content://com.ch.co.book.provider/book");
         ContentValues values = new ContentValues();

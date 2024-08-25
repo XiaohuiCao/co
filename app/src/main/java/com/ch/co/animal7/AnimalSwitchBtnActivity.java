@@ -5,19 +5,19 @@ import com.ch.co.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class AnimalTestActivity extends Activity {
+// 动画进入方式和退出方式不一样
+public class AnimalSwitchBtnActivity extends Activity {
 
-    private static final String TAG = "TestActivity";
+    private static final String TAG = "AnimalSwitchBtnActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.animal_activity_test);
+        setContentView(R.layout.animal_switch_btn_activity);
         initView();
     }
 
     private void initView() {
-
     }
 
     @Override

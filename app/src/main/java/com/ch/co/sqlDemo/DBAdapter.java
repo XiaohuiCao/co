@@ -14,9 +14,9 @@ public class DBAdapter {
     private static final String DB_TABLE = "bookinfo";
     private static final int DB_VERSION = 1;
     public static final String ID = "_id";
-    public static final String BOOKNAME = "bookName";
+    public static final String BOOK_NAME = "bookName";
     public static final String AUTHOR = "author";
-    public static final String BOOKPRICE = "bookPrice";
+    public static final String BOOK_PRICE = "bookPrice";
     private SQLiteDatabase db;
     private final Context context;
     private BookDBHelper dbHelper;
@@ -43,20 +43,20 @@ public class DBAdapter {
 
     public long insert(Book book) {
         ContentValues bookValues = new ContentValues();
-        bookValues.put(BOOKNAME, book.getBookName());
+        bookValues.put(BOOK_NAME, book.getBookName());
         bookValues.put(AUTHOR, book.getAuthor());
-        bookValues.put(BOOKPRICE, book.getBookPrice());
+        bookValues.put(BOOK_PRICE, book.getBookPrice());
         long ret = db.insert(DB_TABLE, null, bookValues);
         return ret;
     }
 
     public Book[] queryAll() {
-        Cursor results = db.query(DB_TABLE, new String[]{ID, BOOKNAME, AUTHOR, BOOKPRICE}, null, null, null, null, null);
+        Cursor results = db.query(DB_TABLE, new String[]{ID, BOOK_NAME, AUTHOR, BOOK_PRICE}, null, null, null, null, null);
         return ConvertToBook(results);
     }
 
     public Book[] queryOne(long id) {
-        Cursor results = db.query(DB_TABLE, new String[]{ID, BOOKNAME, AUTHOR, BOOKPRICE}, ID + "=" + id, null, null, null, null);
+        Cursor results = db.query(DB_TABLE, new String[]{ID, BOOK_NAME, AUTHOR, BOOK_PRICE}, ID + "=" + id, null, null, null, null);
         return ConvertToBook(results);
     }
 
@@ -71,11 +71,11 @@ public class DBAdapter {
             bookList[i] = new Book();
             int newId = cursor.getInt(0);
             bookList[i].setId(newId);
-            String newBookName = cursor.getString(cursor.getColumnIndex(BOOKNAME));
+            String newBookName = cursor.getString(cursor.getColumnIndex(BOOK_NAME));
             bookList[i].setBookName(newBookName);
             String newAuthor = cursor.getString(cursor.getColumnIndex(AUTHOR));
             bookList[i].setAuthor(newAuthor);
-            Float newBookPrice = cursor.getFloat(cursor.getColumnIndex(BOOKPRICE));
+            Float newBookPrice = cursor.getFloat(cursor.getColumnIndex(BOOK_PRICE));
             bookList[i].setBookPrice(newBookPrice);
             cursor.moveToNext();
         }
@@ -92,9 +92,9 @@ public class DBAdapter {
 
     public long updateOne(long id, Book book) {
         ContentValues bookValues = new ContentValues();
-        bookValues.put(BOOKNAME, book.getBookName());
+        bookValues.put(BOOK_NAME, book.getBookName());
         bookValues.put(AUTHOR, book.getAuthor());
-        bookValues.put(BOOKPRICE, book.getBookPrice());
+        bookValues.put(BOOK_PRICE, book.getBookPrice());
         return db.update(DB_TABLE, bookValues, ID + "=" + id, null);
     }
 
@@ -106,7 +106,7 @@ public class DBAdapter {
 
         private static final String DB_CREATE =
                 "create table " + DB_TABLE + "(" + ID + " integer primary key autoincrement, "
-                        + BOOKNAME + " text not null, " + AUTHOR + " text, " + BOOKPRICE + " float);";
+                        + BOOK_NAME + " text not null, " + AUTHOR + " text, " + BOOK_PRICE + " float);";
 
         @Override
         public void onCreate(SQLiteDatabase _db) {

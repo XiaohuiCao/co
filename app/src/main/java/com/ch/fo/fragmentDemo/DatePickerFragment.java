@@ -10,13 +10,10 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-
 import com.ch.co.R;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -33,7 +30,6 @@ public class DatePickerFragment extends DialogFragment {
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @NonNull
     @Override
@@ -57,9 +53,7 @@ public class DatePickerFragment extends DialogFragment {
                         int year = datePicker.getYear();
                         int month = datePicker.getMonth();
                         int day = datePicker.getDayOfMonth();
-
                         Date date1 = new GregorianCalendar(year, month, day).getTime();
-
                         sendResult(Activity.RESULT_OK, date1);
                     }
                 }).create();

@@ -3,7 +3,6 @@ package com.ch.fo.fragmentDemo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -11,9 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import com.ch.co.R;
-
 import java.util.List;
 
 public class CoursePageActivity extends FragmentActivity {

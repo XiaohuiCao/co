@@ -12,14 +12,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
 import com.ch.co.R;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,7 +34,6 @@ public class CourseFragment extends Fragment {
     private Date mDate = null;
 
     public static CourseFragment newInstance(String courseId) {
-
         Bundle args = new Bundle();
         args.putSerializable(COURSE_ID, courseId);
         CourseFragment fragment = new CourseFragment();
@@ -61,7 +57,6 @@ public class CourseFragment extends Fragment {
         cTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -71,7 +66,6 @@ public class CourseFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
 
@@ -81,7 +75,6 @@ public class CourseFragment extends Fragment {
             FragmentManager fragmentManager = getFragmentManager();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
             String establishedDateStr = course.getEstablishedDate();
-
             try {
                 mDate = sdf.parse(establishedDateStr);
             } catch (ParseException e) {

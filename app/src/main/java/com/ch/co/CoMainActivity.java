@@ -3,7 +3,6 @@ package com.ch.co;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 import com.ch.co.animal7.AnimalMainActivity;
 import com.ch.co.bitmap12.BitMapMainActivity;

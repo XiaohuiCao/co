@@ -7,12 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.ch.co.R;
-
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseHolder> {
@@ -64,7 +61,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseHold
             cTitle.setText(mCourse.getCourseTitle());
             eDate.setText("课程立项时间" + mCourse.getCourseDate());
             mCheck.setChecked(mCourse.isComplete());
-
         }
 
         @Override

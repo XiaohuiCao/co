@@ -1,7 +1,6 @@
 package com.ch.fo.fragmentDemo;
 
 import android.content.Context;
-
 import java.util.ArrayList;
 
 public class CourseCamp {
@@ -20,9 +19,10 @@ public class CourseCamp {
         for (int i = 0; i < 32; i++) {
             Course course = new Course();
             course.setCourseId("2024-ID: " + i);
-            course.setCourseTitle("立项课程标题：" + i);
-            course.setCourseDate("2024-08-31");
-            course.setComplete(i%2 == 0);
+            course.setCourseTitle("立项课程标题：2024-CH-" + i);
+            course.setCourseDate("2024-08-20");
+            course.setEstablishedDate("2024-08-31");
+            course.setComplete(i%3 == 0);
             courseList.add(course);
         }
     }

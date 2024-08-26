@@ -41,7 +41,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.ch.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -49,6 +49,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.ch.fo.FoMainActivity"/>
+        <activity android:name="com.ch.co.CoMainActivity"/>
         <activity
             android:name=".ipc.IpcMainActivity"
             android:configChanges="orientation|screenSize"
@@ -234,6 +236,13 @@
         <activity
             android:name=".sqlDemo.UpdateActivity">
         </activity>
+
+        <activity android:name="com.ch.fo.fragmentDemo.CoursePageActivity">
+        </activity>
+
+        <activity android:name="com.ch.fo.fragmentDemo.FragmentMainActivity">
+        </activity>
+
     </application>
 
 </manifest>

@@ -36,5 +36,10 @@
     <string name="btn_animal_large">Button会变长</string>
     <string name="book_name_1">android 开发艺术探索</string>
     <string name="book_name_2">android 应用开发实践教程</string>
+    <string name="data_picker_title">picker选择器</string>
+    <string name="co_main">co示例</string>
+    <string name="fo_main">fo示例</string>
+    <string name="fragment_demo">fragment示例</string>
+    <string name="sql_demo">sql示例</string>
 
 </resources>

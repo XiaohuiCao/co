@@ -1,4 +1,4 @@
-package com.ch.co.sqlDemo;
+package com.ch.fo.sqlDemo;
 
 import android.content.ContentValues;
 import android.content.Context;

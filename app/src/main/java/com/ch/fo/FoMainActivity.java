@@ -3,9 +3,10 @@ package com.ch.fo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.ch.co.databinding.ActivityMainFoBinding;
-import com.ch.co.sqlDemo.SqlMainActivity;
+import com.ch.fo.service.ServiceMainActivity;
+import com.ch.fo.sqlDemo.SqlMainActivity;
 import com.ch.fo.fragmentDemo.FragmentMainActivity;
 
 public class FoMainActivity extends Activity {
@@ -26,6 +27,11 @@ public class FoMainActivity extends Activity {
         binding.fragmentDemo.setOnClickListener(view -> {
             Intent intent = new Intent();
             intent.setClass(this, FragmentMainActivity.class);
+            startActivity(intent);
+        });
+        binding.serviceDemo.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(this, ServiceMainActivity.class);
             startActivity(intent);
         });
     }

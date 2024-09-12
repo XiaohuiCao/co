@@ -37,7 +37,7 @@ public class CoursePageActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int position) {
                 Course course = courseList.get(position);
-                return CourseFragment.newInstance(course.getCourseId());
+                return CourseDetailFragment.newInstance(course.getCourseId());
             }
 
             @Override

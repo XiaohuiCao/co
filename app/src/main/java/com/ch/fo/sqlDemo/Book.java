@@ -1,4 +1,4 @@
-package com.ch.co.sqlDemo;
+package com.ch.fo.sqlDemo;
 
 public class Book {
     int id;

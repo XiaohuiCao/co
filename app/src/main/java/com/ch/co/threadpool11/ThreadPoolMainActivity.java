@@ -63,8 +63,10 @@ public class ThreadPoolMainActivity extends Activity {
         Intent service = new Intent(this, LocalIntentService.class);
         service.putExtra("task_action", "com.ryg.action.TASK1");
         startService(service);
+
         service.putExtra("task_action", "com.ryg.action.TASK2");
         startService(service);
+
         service.putExtra("task_action", "com.ryg.action.TASK3");
         startService(service);
     }

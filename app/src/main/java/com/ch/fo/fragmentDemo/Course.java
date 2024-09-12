@@ -49,7 +49,4 @@ public class Course {
     public void setComplete(boolean complete) {
         isComplete = complete;
     }
-
-
-
 }

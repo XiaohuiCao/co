@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +43,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseHold
     }
 
     static class CourseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
         private TextView cTitle;
         private TextView eDate;
         private CheckBox mCheck;
@@ -54,6 +54,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseHold
             cTitle = itemView.findViewById(R.id.list_item_title);
             eDate = itemView.findViewById(R.id.list_item_date);
             mCheck = itemView.findViewById(R.id.list_item_check_box);
+
+            mCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    mCourse.setComplete(b);
+                }
+            });
         }
 
         public void bindCourse(Course course) {

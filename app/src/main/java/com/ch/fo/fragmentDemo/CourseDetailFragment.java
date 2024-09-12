@@ -21,7 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CourseFragment extends Fragment {
+public class CourseDetailFragment extends Fragment {
     private static final String COURSE_ID = "course_id";
     private static final String DIALOG_DATE = "dialogDate";
     private static final String EXTRA_DATE = "com.ch.co.fragmentDemo.intent.date";
@@ -33,10 +33,10 @@ public class CourseFragment extends Fragment {
     private CheckBox checkBox;
     private Date mDate = null;
 
-    public static CourseFragment newInstance(String courseId) {
+    public static CourseDetailFragment newInstance(String courseId) {
         Bundle args = new Bundle();
         args.putSerializable(COURSE_ID, courseId);
-        CourseFragment fragment = new CourseFragment();
+        CourseDetailFragment fragment = new CourseDetailFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,7 +51,7 @@ public class CourseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_course, container,false);
+        View view = inflater.inflate(R.layout.fragment_course_detail, container,false);
         cTitle = view.findViewById(R.id.course_title);
         cTitle.setText(course.getCourseTitle());
         cTitle.addTextChangedListener(new TextWatcher() {
@@ -84,7 +84,6 @@ public class CourseFragment extends Fragment {
             dialog.setTargetFragment(this, REQUEST_DATE);
             dialog.show(fragmentManager, DIALOG_DATE);
         });
-
 
         checkBox = view.findViewById(R.id.course_complete);
         checkBox.setChecked(course.isComplete());

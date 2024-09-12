@@ -41,5 +41,6 @@
     <string name="fo_main">fo示例</string>
     <string name="fragment_demo">fragment示例</string>
     <string name="sql_demo">sql示例</string>
+    <string name="service_demo">services示例</string>
 
 </resources>

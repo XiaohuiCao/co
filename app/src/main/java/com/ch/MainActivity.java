@@ -4,15 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
 import com.ch.co.CoMainActivity;
 import com.ch.co.R;
 import com.ch.co.databinding.ActivityMainBinding;
 import com.ch.fo.FoMainActivity;
+import com.ch.radar.RadarMapMainActivity;
+import com.ch.wheel.GameActivity1;
+import com.ch.wheel.GameActivity2;
+import com.ch.wheel.GameActivity3;
+import com.ch.wheel.GameActivity5;
+import com.ch.wheel.GameActivity6;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -28,11 +36,23 @@ public class MainActivity extends AppCompatActivity {
         binding.coMain.setOnClickListener(view -> {
             Intent intent = new Intent();
             intent.setClass(this, CoMainActivity.class);
-            startActivity(intent);});
-        binding.foMain.setOnClickListener(view ->  {
+            startActivity(intent);
+        });
+        binding.foMain.setOnClickListener(view -> {
             Intent intent = new Intent();
             intent.setClass(this, FoMainActivity.class);
-            startActivity(intent);});
+            startActivity(intent);
+        });
+        binding.radarMain.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(this, RadarMapMainActivity.class);
+            startActivity(intent);
+        });
+        binding.wheelPanMain.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(this, GameActivity6.class);
+            startActivity(intent);
+        });
     }
 
     @Override

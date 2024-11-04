@@ -45,7 +45,6 @@ public class TCPServerService extends Service {
     }
 
     private class TcpServer implements Runnable {
-
         @SuppressWarnings("resource")
         @Override
         public void run() {
@@ -102,5 +101,4 @@ public class TCPServerService extends Service {
         MyUtils.close(in);
         client.close();
     }
-
 }

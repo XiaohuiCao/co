@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="20dp"
+        android:background="@drawable/rounded_theme_background"
+        style="@style/AppTheme.Button.Green"
         android:text="@string/show_normal_notification" />
 
     <Button
@@ -17,6 +19,8 @@
         android:layout_width="match_parent"
         android:layout_margin="20dp"
         android:layout_height="50dp"
+        android:background="@drawable/rounded_theme_background"
+        style="@style/AppTheme.Button.Green"
         android:text="@string/show_custom_notification" />
 
 </LinearLayout>

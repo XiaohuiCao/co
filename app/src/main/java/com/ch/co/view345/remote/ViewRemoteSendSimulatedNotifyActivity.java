@@ -2,6 +2,7 @@ package com.ch.co.view345.remote;
 
 import static com.ch.co.utils.MyConstants.*;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -14,6 +15,9 @@ import android.widget.Toast;
 
 import com.ch.co.R;
 
+/**
+ * 发送消息模拟器
+ */
 public class ViewRemoteSendSimulatedNotifyActivity extends Activity {
     private static final String TAG = "ViewRemoteContentViewAct";
 
@@ -22,7 +26,7 @@ public class ViewRemoteSendSimulatedNotifyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_remote_send_msg);
         Log.d(TAG, "onCreate");
-//        Toast.makeText(this, getIntent().getStringExtra("remoteViewId"), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, getIntent().getStringExtra(REMOTE_VIEW_MSG_ID), Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "12345", Toast.LENGTH_SHORT).show();
         initView();
     }

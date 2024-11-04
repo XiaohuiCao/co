@@ -15,6 +15,7 @@ import com.ch.co.CoMainActivity;
 import com.ch.co.R;
 import com.ch.co.databinding.ActivityMainBinding;
 import com.ch.fo.FoMainActivity;
+import com.ch.gaode.GaodeMainActivity;
 import com.ch.radar.RadarMapMainActivity;
 import com.ch.wheel.GameActivity1;
 import com.ch.wheel.GameActivity2;
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
             intent.setClass(this, GameActivity6.class);
             startActivity(intent);
         });
+//        binding.gaodeMap.setOnClickListener(view -> {
+//            Intent intent = new Intent();
+//            intent.setClass(this, GaodeMainActivity.class);
+//            startActivity(intent);
+//        });
     }
 
     @Override

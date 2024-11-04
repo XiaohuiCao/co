@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://apis.map.qq.com" }
+        maven { url "https://releases.amap.com/repository/maven" }
     }
 }
 

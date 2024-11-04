@@ -62,7 +62,7 @@ public class ListViewOverrideDispatch extends ListView {
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;
                 Log.d(TAG, "dx:" + deltaX + " dy:" + deltaY);
-                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {      // 父容器需要此类点击事件
                     mInterView.requestDisallowInterceptTouchEvent(false);
                 }
                 break;

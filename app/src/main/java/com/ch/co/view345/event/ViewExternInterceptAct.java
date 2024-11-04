@@ -18,6 +18,9 @@ import com.ch.co.utils.MyUtils;
 
 import java.util.ArrayList;
 
+/**
+ * 场景1:外部滑动方向和内部滑动方向不一致
+ */
 public class ViewExternInterceptAct extends Activity {
     private static final String TAG = "ViewExternInterceptAct";
 

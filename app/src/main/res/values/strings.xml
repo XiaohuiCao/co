@@ -31,8 +31,8 @@
     <string name="remote_view_send_msg">发送消息</string>
     <string name="notification_bar">通知栏消息</string>
     <string name="send_simu_notification_bar">发送模拟通知栏消息</string>
-    <string name="show_normal_notification">show normal notification</string>
-    <string name="show_custom_notification">show custom notification</string>
+    <string name="show_normal_notification">发送通用提示消息</string>
+    <string name="show_custom_notification">自定义提示消息</string>
     <string name="btn_animal_large">Button会变长</string>
     <string name="book_name_1">android 开发艺术探索</string>
     <string name="book_name_2">android 应用开发实践教程</string>
@@ -42,5 +42,6 @@
     <string name="fragment_demo">fragment示例</string>
     <string name="sql_demo">sql示例</string>
     <string name="service_demo">services示例</string>
+    <string name="view_contents">从模拟发送收到的消息</string>
 
 </resources>

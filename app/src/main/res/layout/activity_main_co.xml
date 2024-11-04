@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="15dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         android:text="@string/ipc2"
        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/ipc2"
         android:text="@string/view_event3"/>
 
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/view_event3"
         android:text="@string/view_principle4"/>
 
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/view_principle4"
         android:text="@string/view_remote5"/>
 
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/view_remote5"
         android:text="@string/drawable6"/>
 
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/drawable6"
         android:text="@string/animal7"/>
 
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/animal7"
         android:text="@string/window8"/>
 
@@ -76,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@id/window8"
         android:text="@string/thread_poll11"/>
 
@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="25dp"
-        android:background="@color/light_green"
+        android:background="@drawable/rounded_theme_background"
         app:layout_constraintTop_toBottomOf="@+id/thread_poll11"
         android:text="@string/bitmap12"/>
 

@@ -12,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.RemoteViews;
 import com.ch.co.R;
 
+/**
+ * 远程view含两部分，通知栏消息和发送模拟通知栏消息
+ */
 public class ViewRemoteMainActivity extends Activity {
     private static final String TAG = "ViewRemoteMainActivity";
     private LinearLayout mRemoteViewsContent;

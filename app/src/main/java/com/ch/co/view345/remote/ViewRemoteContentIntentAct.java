@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.widget.Toast;
 import com.ch.co.R;
 
+/**
+ *
+ */
 public class ViewRemoteContentIntentAct extends Activity {
     private static final String TAG = "ViewRemoteContentIntentAct";
 

@@ -19,6 +19,9 @@ import android.widget.TextView;
 
 import com.ch.co.R;
 
+/**
+ *
+ */
 public class ViewRemoteNotifyActivity extends Activity implements OnClickListener {
     private static final String TAG = "ViewRemoteTestActivity";
     private Button mBtnNormalNotification;

@@ -10,19 +10,39 @@
         android:id="@+id/notification_bar"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
-        android:text="@string/notification_bar" />
+        android:text="@string/notification_bar"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/rounded_theme_background"/>
 
     <Button
         android:id="@+id/send_simu_notification_bar"
         style="@style/AppTheme.Button.Green"
         android:onClick="onButtonClick"
-        android:text="@string/send_simu_notification_bar" />
+        android:text="@string/send_simu_notification_bar"
+        android:background="@drawable/rounded_theme_background"/>
 
     <LinearLayout
-        android:id="@+id/remote_views_content"
+        android:id="@+id/remote_views_contents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_marginVertical="15dp"
+        android:background="@drawable/rounded_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="@string/view_contents"
+            android:layout_margin="5dp"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/remote_views_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

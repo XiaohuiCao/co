@@ -89,7 +89,7 @@ public class ExternHorizontalScrollInterceptViewEx extends ViewGroup {
                 break;
             }
             case MotionEvent.ACTION_MOVE: {
-                if (isIntercept(event)) {
+                if (isIntercept(event)) {       //父容器需要当前点击事件
                     intercepted = true;
                 } else {
                     intercepted = false;

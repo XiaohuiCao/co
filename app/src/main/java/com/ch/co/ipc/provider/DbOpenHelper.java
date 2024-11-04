@@ -27,6 +27,12 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_USER_TABLE);
     }
 
+    /**
+     * 当版本号高于旧的版本号时，自动调用该方法
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // TODO ignored

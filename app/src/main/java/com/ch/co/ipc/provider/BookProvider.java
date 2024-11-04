@@ -54,7 +54,8 @@ public class BookProvider extends ContentProvider {
         if (table == null) {
             throw new IllegalArgumentException("Unsupported URI: " + uri);
         }
-        return mDb.query(table, projection, selection, selectionArgs, null, null, sortOrder, null);
+        return mDb.query(table, projection, selection, selectionArgs,
+                null, null, sortOrder, null);
     }
 
     @Override

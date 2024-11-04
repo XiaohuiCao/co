@@ -7,7 +7,7 @@
 
     <com.ch.co.ui.CircleView
         android:id="@+id/circle_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
 
 </LinearLayout>
